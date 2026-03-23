@@ -6,10 +6,8 @@ import os
 from bs4 import BeautifulSoup
 from curl_cffi import requests
 
-# Replace with your actual Amazon Affiliate tag
 AFFILIATE_TAG = "1097fa-20"
 
-# The PC Parts Catalog mapped to your new budget algorithms
 input_catalog = {
     "CPU & Motherboard": {
         "Processor (CPU)": {
@@ -217,7 +215,6 @@ for category, items in input_catalog.items():
                 "img": img
             }
             
-            # --- PC SPECIFIC LOGIC: Added 'benchmark' scores for core components ---
             if category == "Graphics Card (GPU)" and item_name == "Dedicated GPU":
                 if tier_name == "Budget": tier_data["benchmark"] = "1080p High | 60+ FPS"
                 elif tier_name == "Standard": tier_data["benchmark"] = "1440p Ultra | 100+ FPS"
