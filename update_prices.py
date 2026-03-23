@@ -11,19 +11,19 @@ AFFILIATE_TAG = "1097fa-20"
 input_catalog = {
     "CPU & Motherboard": {
         "Processor (Intel)": {
-            "Budget": "https://www.amazon.com/dp/B09FXNVDBJ/?tag=1097fa-20",      # i3-12100F
-            "Standard": "https://www.amazon.com/dp/B0BQ6B9511/?tag=1097fa-20",    # i5-13400F
-            "Premium": "https://www.amazon.com/dp/B0CGJ41C9W/?tag=1097fa-20",     # i7-14700K
+            "Budget": "https://www.amazon.com/dp/B09NPJX7PV/?tag=1097fa-20",      # i3-12100F
+            "Standard": "https://www.amazon.com/dp/B09FX4D72T/?tag=1097fa-20",    # i5-13400F
+            "Premium": "https://www.amazon.com/dp/B0CGJC178L/?tag=1097fa-20",     # i7-14700K
             "Enthusiast": "https://www.amazon.com/dp/B0CGJDKLB8/?tag=1097fa-20"   # i9-14900K
         },
         "Processor (AMD)": {
-            "Budget": "https://www.amazon.com/dp/B09VCHR1VH/?tag=1097fa-20",      # Ryzen 5 5600
-            "Standard": "https://www.amazon.com/dp/B0BBJDS62N/?tag=1097fa-20",    # Ryzen 5 7600
+            "Budget": "https://www.amazon.com/dp/B09VCJ171S/?tag=1097fa-20",      # Ryzen 5 5600
+            "Standard": "https://www.amazon.com/dp/B0BMQJWBDM/?tag=1097fa-20",    # Ryzen 5 7600
             "Premium": "https://www.amazon.com/dp/B0BTZB7F88/?tag=1097fa-20",     # Ryzen 7 7800X3D
             "Enthusiast": "https://www.amazon.com/dp/B0BTRH9MNS/?tag=1097fa-20"   # Ryzen 9 7950X3D
         },
         "Motherboard (Intel DDR4)": {
-            "Budget": "https://www.amazon.com/dp/B09PXD2QDC/?tag=1097fa-20",      # H610/B660M
+            "Budget": "https://www.amazon.com/dp/B09PX326Q8/?tag=1097fa-20",      # H610/B660M
             "Standard": "https://www.amazon.com/dp/B0BZ9T4KF6/?tag=1097fa-20",    # B760 DDR4
             "Premium": "https://www.amazon.com/dp/B09J1RMBQD/?tag=1097fa-20",     # Z690 DDR4
             "Enthusiast": "https://www.amazon.com/dp/B0BQD58D96/?tag=1097fa-20"   # Z790 DDR4
