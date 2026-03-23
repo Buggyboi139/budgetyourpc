@@ -128,10 +128,10 @@
         }
         .priority-radio { display: none; }
         input[value="budget"]:checked + .priority-label { border-color: #cbd5e1; color: #cbd5e1; background: rgba(203, 213, 225, 0.1); box-shadow: 0 10px 20px rgba(203, 213, 225, 0.1); transform: translateY(-2px); }
-        input[value="balanced"]:checked + .priority-label { border-color: #a1c4fd; color: #a1c4fd; background: rgba(161, 196, 253, 0.1); box-shadow: 0 10px 20px rgba(161, 196, 253, 0.1); transform: translateY(-2px); }
-        input[value="safety"]:checked + .priority-label { border-color: #fbd38d; color: #fbd38d; background: rgba(251, 211, 141, 0.1); box-shadow: 0 10px 20px rgba(251, 211, 141, 0.1); transform: translateY(-2px); }
-        input[value="aesthetic"]:checked + .priority-label { border-color: #fbc2eb; color: #fbc2eb; background: rgba(251, 194, 235, 0.1); box-shadow: 0 10px 20px rgba(251, 194, 235, 0.1); transform: translateY(-2px); }
-        input[value="organic"]:checked + .priority-label { border-color: #b6eacb; color: #b6eacb; background: rgba(182, 234, 203, 0.1); box-shadow: 0 10px 20px rgba(182, 234, 203, 0.1); transform: translateY(-2px); }
+        input[value="office"]:checked + .priority-label { border-color: #93c5fd; color: #93c5fd; background: rgba(147, 197, 253, 0.1); box-shadow: 0 10px 20px rgba(147, 197, 253, 0.1); transform: translateY(-2px); }
+        input[value="gaming"]:checked + .priority-label { border-color: #86efac; color: #86efac; background: rgba(134, 239, 172, 0.1); box-shadow: 0 10px 20px rgba(134, 239, 172, 0.1); transform: translateY(-2px); }
+        input[value="high-end"]:checked + .priority-label { border-color: #c4b5fd; color: #c4b5fd; background: rgba(196, 181, 253, 0.1); box-shadow: 0 10px 20px rgba(196, 181, 253, 0.1); transform: translateY(-2px); }
+        input[value="ai"]:checked + .priority-label { border-color: #fde047; color: #fde047; background: rgba(253, 224, 71, 0.1); box-shadow: 0 10px 20px rgba(253, 224, 71, 0.1); transform: translateY(-2px); }
 
         input[value="AMD"]:checked + .priority-label, input[value="Intel"]:checked + .priority-label,
         input[value="DDR4"]:checked + .priority-label, input[value="DDR5"]:checked + .priority-label {
@@ -409,7 +409,7 @@
                 <span>How do I use this?</span>
             </div>
             <h1>Plan your next PC build.</h1>
-            <p class="subtitle">Set your budget and we'll balance your components to avoid bottlenecks.</p>
+            <p class="subtitle">Set your budget and we'll balance your components for you.</p>
             
             <div class="control-panel">
                 <div class="category-title-label" style="text-align: center; margin-bottom: 5px;">Your Target Budget</div>
@@ -421,11 +421,11 @@
                 <div class="category-selector" style="margin-bottom: 35px;">
                     <div class="category-title-label">Build Priority</div>
                     <div class="toggles-grid" id="profileSelector">
-                        <label><input type="radio" name="priority_profile" value="budget" class="priority-radio"><div class="priority-label">Entry / Office</div></label>
-                        <label><input type="radio" name="priority_profile" value="balanced" class="priority-radio" checked><div class="priority-label">Balanced Gaming</div></label>
-                        <label><input type="radio" name="priority_profile" value="safety" class="priority-radio"><div class="priority-label">Workstation</div></label>
-                        <label><input type="radio" name="priority_profile" value="aesthetic" class="priority-radio"><div class="priority-label">Aesthetic / RGB</div></label>
-                        <label><input type="radio" name="priority_profile" value="organic" class="priority-radio"><div class="priority-label">Enthusiast</div></label>
+                        <label><input type="radio" name="priority_profile" value="budget" class="priority-radio"><div class="priority-label">Budget</div></label>
+                        <label><input type="radio" name="priority_profile" value="office" class="priority-radio"><div class="priority-label">Office</div></label>
+                        <label><input type="radio" name="priority_profile" value="gaming" class="priority-radio" checked><div class="priority-label">Gaming</div></label>
+                        <label><input type="radio" name="priority_profile" value="high-end" class="priority-radio"><div class="priority-label">High-End</div></label>
+                        <label><input type="radio" name="priority_profile" value="ai" class="priority-radio"><div class="priority-label">AI Machine</div></label>
                     </div>
                 </div>
 
@@ -569,24 +569,24 @@
 
             const profiles = {
                 budget: {
-                    weights: { "CPU & Motherboard": 0.25, "Graphics Card (GPU)": 0.30, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.10, "Cooling": 0.05, "Case": 0.10, "Monitor": 0.15 },
-                    desc: "Focuses purely on getting the system running with essential components, minimizing costs on aesthetics and extras."
+                    weights: { "CPU & Motherboard": 0.30, "Graphics Card (GPU)": 0.20, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.10, "Cooling": 0.05, "Case": 0.05, "Monitor": 0.10 },
+                    desc: "Focuses purely on getting the system running with essential components. GPU power is secondary to basic functionality."
                 },
-                balanced: {
-                    weights: { "CPU & Motherboard": 0.20, "Graphics Card (GPU)": 0.35, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.08, "Cooling": 0.05, "Case": 0.07, "Monitor": 0.15 },
-                    desc: "A well-rounded allocation ensuring no single component bottlenecks the others, maximizing gaming performance per dollar."
+                office: {
+                    weights: { "CPU & Motherboard": 0.40, "Graphics Card (GPU)": 0.05, "Memory (RAM)": 0.15, "Storage (SSD/HDD)": 0.15, "Power Supply (PSU)": 0.05, "Cooling": 0.05, "Case": 0.05, "Monitor": 0.10 },
+                    desc: "Prioritizes processing power, fast storage, and plenty of memory for heavy multitasking and productivity, rather than graphics."
                 },
-                safety: {
-                    weights: { "CPU & Motherboard": 0.35, "Graphics Card (GPU)": 0.20, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.15, "Power Supply (PSU)": 0.08, "Cooling": 0.07, "Case": 0.00, "Monitor": 0.10 },
-                    desc: "Prioritizes processing power, fast storage, and memory for productivity, rendering, and heavy multi-tasking."
+                gaming: {
+                    weights: { "CPU & Motherboard": 0.20, "Graphics Card (GPU)": 0.45, "Memory (RAM)": 0.08, "Storage (SSD/HDD)": 0.07, "Power Supply (PSU)": 0.05, "Cooling": 0.05, "Case": 0.05, "Monitor": 0.05 },
+                    desc: "A classic gaming allocation. Dumps the bulk of the budget into the GPU and a competent processor to avoid bottlenecks."
                 },
-                aesthetic: {
-                    weights: { "CPU & Motherboard": 0.15, "Graphics Card (GPU)": 0.30, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.08, "Cooling": 0.10, "Case": 0.12, "Monitor": 0.15 },
-                    desc: "Maximized budget for high-quality cases, RGB lighting, liquid cooling, and design-forward components."
+                "high-end": {
+                    weights: { "CPU & Motherboard": 0.25, "Graphics Card (GPU)": 0.35, "Memory (RAM)": 0.08, "Storage (SSD/HDD)": 0.08, "Power Supply (PSU)": 0.08, "Cooling": 0.06, "Case": 0.05, "Monitor": 0.05 },
+                    desc: "A well-rounded enthusiast build. Spread evenly to allow for premium cases, high-end power delivery, and excellent cooling alongside top-tier silicon."
                 },
-                organic: {
-                    weights: { "CPU & Motherboard": 0.25, "Graphics Card (GPU)": 0.35, "Memory (RAM)": 0.08, "Storage (SSD/HDD)": 0.08, "Power Supply (PSU)": 0.10, "Cooling": 0.09, "Case": 0.00, "Monitor": 0.20 },
-                    desc: "Heavily weighted towards premium cooling, high-end power delivery, and top-tier parts for overclocking and maximum fidelity."
+                ai: {
+                    weights: { "CPU & Motherboard": 0.10, "Graphics Card (GPU)": 0.60, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.05, "Power Supply (PSU)": 0.08, "Cooling": 0.02, "Case": 0.02, "Monitor": 0.03 },
+                    desc: "Machine learning focused. Dumps an aggressive amount of the budget directly into the GPU for maximum VRAM and tensor core performance."
                 }
             };
 
@@ -613,7 +613,7 @@
                 
                 const state = {
                     budget: budgetSlider.value,
-                    profile: pRadio ? pRadio.value : "balanced",
+                    profile: pRadio ? pRadio.value : "gaming",
                     platform: cpuRadio ? cpuRadio.value : "AMD",
                     ram: ramRadio ? ramRadio.value : "DDR5",
                     categories: Array.from(document.querySelectorAll('.category-toggle:checked')).map(cb => cb.value)
