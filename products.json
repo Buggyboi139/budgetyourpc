@@ -4,40 +4,64 @@
             "name": "Processor (Intel)",
             "tiers": [
                 {
-                    "tier": "Budget",
+                    "tier": "Tier 1",
                     "title": "Intel\u00ae Core\u2122 12th Gen i3-12100F desktop processor, featuring PCIe Gen 5.0 & 4.0 support, DDR5 and DDR4 support. Discrete graphics required.",
                     "price": 90.06,
                     "rating": 4.7,
                     "reviews": 1650,
-                    "link": "https://www.amazon.com/dp/B09NPJX7PV/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/515Tz7tiCyL._AC_SY355_.jpg"
+                    "link": "https://www.amazon.com/dp/B09NPJX7PV/?tag=1097fa-20 #i3-12100F",
+                    "img": "https://m.media-amazon.com/images/I/515Tz7tiCyL._AC_SY355_.jpg",
+                    "benchmark": "Great Entry Level Gaming"
                 },
                 {
-                    "tier": "Standard",
-                    "title": "Intel Core i5-12600K Desktop Processor with Integrated Graphics and 10 (6P+4E) Cores up to 4.9 GHz Unlocked LGA1700 600 Series Chipset 125W",
-                    "price": 185.44,
+                    "tier": "Tier 2",
+                    "title": "Boxed INTEL I5-13400F 20M Cache, UP to 4.60GHZ",
+                    "price": 189.99,
+                    "rating": 4.6,
+                    "reviews": 671,
+                    "link": "https://www.amazon.com/dp/B0BQ6BRL4T/?tag=1097fa-20 #i5-13400F",
+                    "img": "https://m.media-amazon.com/images/I/6138mFBll6L._AC_SY355_.jpg",
+                    "benchmark": "Solid 1080p Performance"
+                },
+                {
+                    "tier": "Tier 3",
+                    "title": "Intel Core i5-13600K Desktop Processor 14 cores (6 P-cores + 8 E-cores) 24M Cache, up to 5.1 GHz",
+                    "price": 319.0,
                     "rating": 4.7,
-                    "reviews": 2948,
-                    "link": "https://www.amazon.com/dp/B09FX4D72T/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/51ugNYlDT1L._AC_SX355_.jpg"
+                    "reviews": 1408,
+                    "link": "https://www.amazon.com/dp/B0BCDR9M33/?tag=1097fa-20 #i5-13600K",
+                    "img": "https://m.media-amazon.com/images/I/61lNEpDfdcL._AC_SY355_.jpg",
+                    "benchmark": "Excellent Price/Performance"
                 },
                 {
-                    "tier": "Premium",
+                    "tier": "Tier 4",
                     "title": "Intel\u00ae Core\u2122 i7-14700KF New Gaming Desktop Processor 20 cores (8 P-cores + 12 E-cores) - Unlocked",
-                    "price": 349.99,
+                    "price": 349.97,
                     "rating": 4.7,
                     "reviews": 681,
-                    "link": "https://www.amazon.com/dp/B0CGJC178L/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/61JhyZyKOcL._AC_SY355_.jpg"
+                    "link": "https://www.amazon.com/dp/B0CGJC178L/?tag=1097fa-20 #i7-14700K",
+                    "img": "https://m.media-amazon.com/images/I/61JhyZyKOcL._AC_SY355_.jpg",
+                    "benchmark": "High-End Gaming & Streaming"
                 },
                 {
-                    "tier": "Enthusiast",
-                    "title": "Intel\u00ae Core\u2122 i9-14900K Desktop Processor",
-                    "price": 468.99,
-                    "rating": 4.2,
-                    "reviews": 1353,
-                    "link": "https://www.amazon.com/dp/B0CGJDKLB8/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/619ytLAytAL._AC_SY355_.jpg"
+                    "tier": "Tier 5",
+                    "title": "Intel Core i9 (12th Gen) i9-12900KS Gaming Desktop Processor with Integrated Graphics and Hexadeca-core (16 Core) 2.50 GHz",
+                    "price": 479.99,
+                    "rating": 4.6,
+                    "reviews": 365,
+                    "link": "https://www.amazon.com/dp/B09RWL74GY/?tag=1097fa-20 #i9-14900K",
+                    "img": "https://m.media-amazon.com/images/I/61vAL6P8pFL._AC_SX355_.jpg",
+                    "benchmark": "Top-Tier Gaming Performance"
+                },
+                {
+                    "tier": "Tier 6",
+                    "title": "Intel Core i9-13900K Desktop Processor 24 cores (8 P-cores + 16 E-cores) 36M Cache, up to 5.8 GHz",
+                    "price": 610.66,
+                    "rating": 4.4,
+                    "reviews": 1979,
+                    "link": "https://www.amazon.com/dp/B0BCF54SR1/?tag=1097fa-20 #i9-14900KS",
+                    "img": "https://m.media-amazon.com/images/I/61My4F2-XUL._AC_SY355_.jpg",
+                    "benchmark": "Extreme Multitasking & Productivity"
                 }
             ]
         },
@@ -45,40 +69,64 @@
             "name": "Processor (AMD)",
             "tiers": [
                 {
-                    "tier": "Budget",
-                    "title": "AMD Ryzen 5 5500 6-Core, 12-Thread Unlocked Desktop Processor with Wraith Stealth Cooler",
-                    "price": 85.0,
-                    "rating": 4.7,
-                    "reviews": 10145,
-                    "link": "https://www.amazon.com/dp/B09VCJ171S/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/51So7GoGvxL._AC_SX355_.jpg"
+                    "tier": "Tier 1",
+                    "title": "AMD Ryzen 5 5600X 6-core, 12-thread unlocked desktop processor with Wraith Stealth cooler",
+                    "price": 181.9,
+                    "rating": 4.8,
+                    "reviews": 30002,
+                    "link": "https://www.amazon.com/dp/B08166SLDF/?tag=1097fa-20 #Ryzen-5-5600",
+                    "img": "https://m.media-amazon.com/images/I/51ld6RR8IrL._AC_SY355_.jpg",
+                    "benchmark": "Great Entry Level Gaming"
                 },
                 {
-                    "tier": "Standard",
+                    "tier": "Tier 2",
                     "title": "AMD Ryzen 5 7600 6-Core, 12-Thread Unlocked Desktop Processor",
-                    "price": 199.0,
+                    "price": 190.99,
                     "rating": 4.8,
                     "reviews": 3111,
-                    "link": "https://www.amazon.com/dp/B0BMQJWBDM/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/61h39mKsSBL._AC_SX355_.jpg"
+                    "link": "https://www.amazon.com/dp/B0BMQJWBDM/?tag=1097fa-20 #Ryzen-5-7600",
+                    "img": "https://m.media-amazon.com/images/I/61h39mKsSBL._AC_SX355_.jpg",
+                    "benchmark": "Solid 1080p Performance"
                 },
                 {
-                    "tier": "Premium",
-                    "title": "AMD Ryzen 7 7800X3D 8-Core, 16-Thread Desktop Processor",
-                    "price": 368.99,
+                    "tier": "Tier 3",
+                    "title": "AMD Ryzen 5 7600X 6-Core, 12-Thread Unlocked Desktop Processor",
+                    "price": 158.99,
                     "rating": 4.8,
-                    "reviews": 7455,
-                    "link": "https://www.amazon.com/dp/B0BTZB7F88/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/51HqC0rU9HL._AC_SX355_.jpg"
+                    "reviews": 5623,
+                    "link": "https://www.amazon.com/dp/B0BBJDS62N/?tag=1097fa-20 #Ryzen-5-7600X",
+                    "img": "https://m.media-amazon.com/images/I/51m7L9bQI8L._AC_SY355_.jpg",
+                    "benchmark": "Excellent Price/Performance"
                 },
                 {
-                    "tier": "Enthusiast",
+                    "tier": "Tier 4",
+                    "title": "AMD RYZEN 7 9800X3D 8-Core, 16-Thread Desktop Processor",
+                    "price": 419.95,
+                    "rating": 4.8,
+                    "reviews": 4852,
+                    "link": "https://www.amazon.com/dp/B0DKFMSMYK/?tag=1097fa-20 #Ryzen-7-7800X3D",
+                    "img": "https://m.media-amazon.com/images/I/71aHvYUgX1L._AC_SY355_.jpg",
+                    "benchmark": "High-End Gaming & Streaming"
+                },
+                {
+                    "tier": "Tier 5",
                     "title": "AMD Ryzen\u2122 9 7950X3D 16-Core, 32-Thread Desktop Processor",
                     "price": 650.99,
                     "rating": 4.6,
                     "reviews": 1308,
-                    "link": "https://www.amazon.com/dp/B0BTRH9MNS/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/51jNS8epPeL._AC_SX355_.jpg"
+                    "link": "https://www.amazon.com/dp/B0BTRH9MNS/?tag=1097fa-20 #Ryzen-9-7950X3D",
+                    "img": "https://m.media-amazon.com/images/I/51jNS8epPeL._AC_SX355_.jpg",
+                    "benchmark": "Top-Tier Gaming Performance"
+                },
+                {
+                    "tier": "Tier 6",
+                    "title": "AMD Ryzen 9 9950X3D 16-Core Processor",
+                    "price": 675.49,
+                    "rating": 4.7,
+                    "reviews": 1426,
+                    "link": "https://www.amazon.com/dp/B0DVZSG8D5/?tag=1097fa-20 #Ryzen-9-7950X3D-Alt",
+                    "img": "https://m.media-amazon.com/images/I/71hZfMZNZuL._AC_SY355_.jpg",
+                    "benchmark": "Extreme Multitasking & Productivity"
                 }
             ]
         },
@@ -86,40 +134,31 @@
             "name": "Motherboard (Intel DDR4)",
             "tiers": [
                 {
-                    "tier": "Budget",
-                    "title": "MSI PRO H610M-G DDR4 Motherboard (12th/13th/14th Gen Intel Core, LGA 1700 Socket, DDR4, PCIe 4, SATA 6Gb/s, 1Gbps LAN, M.2 Slots, USB 3.2, mATX)",
-                    "price": 108.5,
-                    "rating": 4.5,
-                    "reviews": 509,
-                    "link": "https://www.amazon.com/dp/B09PX326Q8/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/614y+wxCpPL._AC_SY355_.jpg"
+                    "tier": "Tier 1",
+                    "title": "GIGABYTE B760M DS3H DDR4 Intel LGA 1700 mATX Motherboard, Supports Intel Core 14th/13th/12th Gen, DDR4, 6+2+1 Power Phase, 2X M.2, PCIe 4.0, USB-C, 2.5GbE LAN, Q-Flash Plus, PCIe EZ-Latch",
+                    "price": 130.0,
+                    "rating": 4.4,
+                    "reviews": 882,
+                    "link": "https://www.amazon.com/dp/B0BSB6MB15/?tag=1097fa-20 #B660M-DDR4",
+                    "img": "https://m.media-amazon.com/images/I/819loXNzHQL._AC_SX355_.jpg"
                 },
                 {
-                    "tier": "Standard",
-                    "title": "MSI PRO H610M-G DDR4 Motherboard (12th/13th/14th Gen Intel Core, LGA 1700 Socket, DDR4, PCIe 4, SATA 6Gb/s, 1Gbps LAN, M.2 Slots, USB 3.2, mATX)",
-                    "price": 108.5,
-                    "rating": 4.5,
-                    "reviews": 509,
-                    "link": "https://www.amazon.com/dp/B09PX326Q8/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/614y+wxCpPL._AC_SY355_.jpg"
-                },
-                {
-                    "tier": "Premium",
+                    "tier": "Tier 2",
                     "title": "MSI PRO B760M-P DDR4 ProSeries Motherboard (Supports 12th/13th/14th Gen Intel Processors, LGA 1700, DDR4, PCIe 4.0, M.2, USB 3.2 Gen2, HDMI/DP, mATX)",
                     "price": 119.99,
                     "rating": 4.5,
                     "reviews": 670,
-                    "link": "https://www.amazon.com/dp/B0BZ9T4KF6/?tag=1097fa-20",
+                    "link": "https://www.amazon.com/dp/B0BZ9T4KF6/?tag=1097fa-20 #B760-DDR4",
                     "img": "https://m.media-amazon.com/images/I/91dC-a6V6rL._AC_SX355_.jpg"
                 },
                 {
-                    "tier": "Enthusiast",
-                    "title": "MSI PRO B760M-P DDR4 ProSeries Motherboard (Supports 12th/13th/14th Gen Intel Processors, LGA 1700, DDR4, PCIe 4.0, M.2, USB 3.2 Gen2, HDMI/DP, mATX)",
-                    "price": 119.99,
-                    "rating": 4.5,
-                    "reviews": 670,
-                    "link": "https://www.amazon.com/dp/B0BZ9T4KF6/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/91dC-a6V6rL._AC_SX355_.jpg"
+                    "tier": "Tier 3",
+                    "title": "GIGABYTE Z790 AORUS Elite AX LGA 1700 ATX Motherboard, Support Intel Core 14th/13th/12th Gen, DDR5, 16+1+2 Power Phase, 4X M.2, PCIe 5.0, USB-C 3.2, WIFI6E, 2.5GbE, Q-Flash, EZ-Latch, RGB Fusion",
+                    "price": 179.99,
+                    "rating": 4.3,
+                    "reviews": 1973,
+                    "link": "https://www.amazon.com/dp/B0BH9DXY38/?tag=1097fa-20 #Z790-DDR4",
+                    "img": "https://m.media-amazon.com/images/I/81a48Z1GciL._AC_SX355_.jpg"
                 }
             ]
         },
@@ -127,40 +166,31 @@
             "name": "Motherboard (Intel DDR5)",
             "tiers": [
                 {
-                    "tier": "Budget",
-                    "title": "MSI B760 Gaming Plus WiFi Gaming Motherboard (Supports 12th/13th/14th Gen Intel Processors, LGA 1700, DDR5, PCIe 4.0, M.2, 2.5Gbps LAN, USB 3.2 Gen2, HDMI/DP, Wi-Fi 6E, Bluetooth 5.3, ATX)",
-                    "price": 139.99,
+                    "tier": "Tier 1",
+                    "title": "ASUS Prime B760M-A AX LGA 1700(Intel\u00ae 12th&13th Gen) microATX Motherboard (PCIe\u00ae 4.0, 2xM.2 Slots, DDR5,Realtek 2.5 Gb LAN,WiFi 6, DP,Rear USB 3.2 Gen 2, Front USB 3.2 Gen 1 Type-C\u00ae)",
+                    "price": 116.0,
                     "rating": 4.5,
-                    "reviews": 842,
-                    "link": "https://www.amazon.com/dp/B0C15THTK7/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/91uLE4tvpyL._AC_SX355_.jpg"
+                    "reviews": 1011,
+                    "link": "https://www.amazon.com/dp/B0BZTB5LKJ/?tag=1097fa-20 #B760M-DDR5",
+                    "img": "https://m.media-amazon.com/images/I/91xYf9f0S0L._AC_SY355_.jpg"
                 },
                 {
-                    "tier": "Standard",
-                    "title": "MSI B760 Gaming Plus WiFi Gaming Motherboard (Supports 12th/13th/14th Gen Intel Processors, LGA 1700, DDR5, PCIe 4.0, M.2, 2.5Gbps LAN, USB 3.2 Gen2, HDMI/DP, Wi-Fi 6E, Bluetooth 5.3, ATX)",
-                    "price": 139.99,
-                    "rating": 4.5,
-                    "reviews": 842,
-                    "link": "https://www.amazon.com/dp/B0C15THTK7/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/91uLE4tvpyL._AC_SX355_.jpg"
-                },
-                {
-                    "tier": "Premium",
+                    "tier": "Tier 2",
                     "title": "GIGABYTE Z790 AORUS Elite AX LGA 1700 ATX Motherboard, Support Intel Core 14th/13th/12th Gen, DDR5, 16+1+2 Power Phase, 4X M.2, PCIe 5.0, USB-C 3.2, WIFI6E, 2.5GbE, Q-Flash, EZ-Latch, RGB Fusion",
                     "price": 179.99,
                     "rating": 4.3,
-                    "reviews": 1972,
-                    "link": "https://www.amazon.com/dp/B0BH9DXY38/?tag=1097fa-20",
+                    "reviews": 1973,
+                    "link": "https://www.amazon.com/dp/B0BH9DXY38/?tag=1097fa-20 #Z790-DDR5-Entry",
                     "img": "https://m.media-amazon.com/images/I/81a48Z1GciL._AC_SX355_.jpg"
                 },
                 {
-                    "tier": "Enthusiast",
-                    "title": "GIGABYTE Z790 AORUS PRO X WIFI7 LGA 1700 ATX Motherboard, Support Intel Core 14th/13th/12th Gen, DDR5, 18+1+2 Power Phase, 5X M.2, PCIe 5.0, USB-C 3.2, WIFI7, 5GbE, Q-Flash, EZ-Latch, RGB Fusion",
-                    "price": 267.24,
-                    "rating": 4.3,
-                    "reviews": 1972,
-                    "link": "https://www.amazon.com/dp/B0CTTVFWHM/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/71jwye+xDLL._AC_SX355_.jpg"
+                    "tier": "Tier 3",
+                    "title": "ASUS TUF Gaming Z790-Plus WiFi LGA 1700(Intel 14th,12th &13th Gen) ATX Gaming Motherboard(PCIe 5.0,DDR5,4xM.2 Slots,16+1 DrMOS,WiFi 6,2.5Gb LAN,Front USB 3.2 Gen 2 Type-C,Thunderbolt 4(USB4),Aura RGB)",
+                    "price": 198.6,
+                    "rating": 4.5,
+                    "reviews": 1283,
+                    "link": "https://www.amazon.com/dp/B0BQD58D96/?tag=1097fa-20 #Z790-DDR5-Premium",
+                    "img": "https://m.media-amazon.com/images/I/81rX0VhoStL._AC_SY355_.jpg"
                 }
             ]
         },
@@ -168,40 +198,31 @@
             "name": "Motherboard (AMD DDR4)",
             "tiers": [
                 {
-                    "tier": "Budget",
-                    "title": "B450M-HDV R4.0 AMD B450 AM4 Socket Ryzen 2000 - 5000 Processors DDR4 3200 64GB HDMI DVI-D D-Sub Motherboard SATA 6Gb/s Micro ATX M.2",
-                    "price": 69.99,
-                    "rating": 4.4,
-                    "reviews": 3558,
-                    "link": "https://www.amazon.com/dp/B07MWGKHR9/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/71nLeH6xRqL._AC_SX355_.jpg"
-                },
-                {
-                    "tier": "Standard",
-                    "title": "ASUS TUF Gaming B550-PLUS WiFi II AMD AM4 (3rd Gen Ryzen\u2122) ATX Gaming Motherboard (PCIe 4.0, WiFi 6, 2.5Gb LAN, BIOS Flashback, USB 3.2 Gen 2, Addressable Gen 2 RGB Header and Aura Sync)",
-                    "price": 119.99,
+                    "tier": "Tier 1",
+                    "title": "GIGABYTE A520M K V2 (REV. 1.0) CHIPSET AMD A520 AM4, MATX, DDR4 - A520M K V2 1.0 MAE Card",
+                    "price": 74.0,
                     "rating": 4.5,
-                    "reviews": 1211,
-                    "link": "https://www.amazon.com/dp/B09K4QMPL9/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/81Wv4R9LRNL._AC_SY355_.jpg"
+                    "reviews": 1325,
+                    "link": "https://www.amazon.com/dp/B0BXFBN121/?tag=1097fa-20 #A520M-DDR4",
+                    "img": "https://m.media-amazon.com/images/I/8167DVOm0ZL._AC_SX355_.jpg"
                 },
                 {
-                    "tier": "Premium",
-                    "title": "Asus ROG Strix B550-F Gaming WiFi II AMD AM4 (3rd Gen Ryzen) ATX Gaming Motherboard (PCIe 4.0,WiFi 6E, 2.5Gb LAN, BIOS Flashback, HDMI 2.1, Addressable Gen 2 RGB Header and Aura Sync)",
-                    "price": 139.99,
-                    "rating": 4.6,
-                    "reviews": 2816,
-                    "link": "https://www.amazon.com/dp/B09GP7P1XS/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/81S9D7bqEzL._AC_SY355_.jpg"
+                    "tier": "Tier 2",
+                    "title": "MSI B550M PRO-VDH WiFi ProSeries Motherboard (AMD Ryzen 5000, AM4, DDR4, PCIe 4.0, SATA 6Gb/s, M.2, USB 3.2 Gen 1, Wi-Fi, Bluetooth, D-SUB/HDMI/DP, Micro-ATX)",
+                    "price": 99.99,
+                    "rating": 4.5,
+                    "reviews": 5709,
+                    "link": "https://www.amazon.com/dp/B089D1YG11/?tag=1097fa-20 #B550M-WiFi",
+                    "img": "https://m.media-amazon.com/images/I/61HOwOmsAiL._AC_SX355_.jpg"
                 },
                 {
-                    "tier": "Enthusiast",
-                    "title": "Asus ROG Strix B550-F Gaming WiFi II AMD AM4 (3rd Gen Ryzen) ATX Gaming Motherboard (PCIe 4.0,WiFi 6E, 2.5Gb LAN, BIOS Flashback, HDMI 2.1, Addressable Gen 2 RGB Header and Aura Sync)",
-                    "price": 139.99,
-                    "rating": 4.6,
-                    "reviews": 2816,
-                    "link": "https://www.amazon.com/dp/B09GP7P1XS/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/81S9D7bqEzL._AC_SY355_.jpg"
+                    "tier": "Tier 3",
+                    "title": "GIGABYTE B550 Eagle WIFI6 AMD AM4 ATX Motherboard, Supports Ryzen 5000/4000/3000 Processors, DDR4, 10+3 Power Phase, 2X M.2, PCIe 4.0, USB-C, WIFI6, GbE LAN, PCIe EZ-Latch, EZ-Latch, RGB Fusion",
+                    "price": 99.99,
+                    "rating": 4.5,
+                    "reviews": 461,
+                    "link": "https://www.amazon.com/dp/B0DXWWWTH8/?tag=1097fa-20 #B550-Premium",
+                    "img": "https://m.media-amazon.com/images/I/81HyYYlfU6L._AC_SY355_.jpg"
                 }
             ]
         },
@@ -209,40 +230,31 @@
             "name": "Motherboard (AMD DDR5)",
             "tiers": [
                 {
-                    "tier": "Budget",
-                    "title": "ASUS Prime A620-PLUS WIFI6 AMD A620 AM5 ATX Motherboard, DDR5, PCIe 4.0, Dual M.2 Slots, WiFi 6, DisplayPort/HDMI\u2122, Rear & Front USB 5Gbps Type-C, SATA 6 Gbps, Two-Way AI Noise Cancelation, Aura Sync",
-                    "price": 102.2,
+                    "tier": "Tier 1",
+                    "title": "ASUS TUF Gaming A620M-PLUS(WiFi) AMD AM5 (Ryzen 7000) microATX Gaming Motherboard(DDR5,PCIe 4.0,2xM.2 Slots,2.5Gb LAN,Wi-Fi6,2xDisplayPort,HDMI,Front USB 3.2 Gen 1 Type-C,BIOS Flashback,M.2 Q-Latch)",
+                    "price": 149.99,
                     "rating": 4.5,
                     "reviews": 1483,
-                    "link": "https://www.amazon.com/dp/B0CV9BTY7B/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/8148szdPSDL._AC_SY355_.jpg"
+                    "link": "https://www.amazon.com/dp/B0C3ZPLNTH/?tag=1097fa-20 #A620M-DDR5",
+                    "img": "https://m.media-amazon.com/images/I/81lwJ6erktL._AC_SY355_.jpg"
                 },
                 {
-                    "tier": "Standard",
-                    "title": "GIGABYTE B650 AORUS Elite AX AMD AM5 ATX Motherboard, Support Ryzen 9000/8000/7000 Series, DDR5, 14+2+1 Power Phase, PCIe 5.0 M.2, USB-C 3.2 Gen 2, WIFI6E, 2.5GbE, EZ-Latch, Q-Flash, RGB Fusion",
-                    "price": 149.99,
-                    "rating": 4.3,
-                    "reviews": 1456,
-                    "link": "https://www.amazon.com/dp/B0BH7GTY9C/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/81JFKzNyl+L._AC_SX355_.jpg"
-                },
-                {
-                    "tier": "Premium",
-                    "title": "ASUS ROG Strix B650E-F Gaming WiFi AMD B650 AM5 Ryzen\u2122 Desktop 9000 8000 & 7000 ATX Motherboard, 12+2 Power Stages, DDR5, 3X M.2 Slot, PCIe\u00ae 5.0, WiFi 6E, 2.5G LAN, USB 3.2 Gen 2x2 Type-C\u00ae, Aura Sync",
-                    "price": 231.99,
+                    "tier": "Tier 2",
+                    "title": "ASUS TUF Gaming B650-PLUS WiFi AMD B650 AM5 Ryzen\u2122 Desktop 9000 8000 and 7000 ATX Motherboard, 14 Power Stages, PCIe\u00ae 5.0 M.2, DDR5 Memory, WiFi 6 and 2.5 Gb Ethernet, USB4\u00ae Support Aura Sync",
+                    "price": 134.0,
                     "rating": 4.4,
-                    "reviews": 2430,
-                    "link": "https://www.amazon.com/dp/B0BHMTYZKZ/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/814z1MeUZyL._AC_SY355_.jpg"
+                    "reviews": 2421,
+                    "link": "https://www.amazon.com/dp/B0BHN7GGBQ/?tag=1097fa-20 #B650-Premium",
+                    "img": "https://m.media-amazon.com/images/I/81ogi-krqkL._AC_SY355_.jpg"
                 },
                 {
-                    "tier": "Enthusiast",
-                    "title": "MSI X670E GAMING PLUS WIFI Gaming Motherboard (AMD Ryzen 9000/8000/7000 Series Processors, AM5, DDR5, PCIe 5.0, SATA 6Gb/s, M.2 slots, USB 3.2 Gen 2, Wi-Fi 6E, Bluetooth 5.3, 2.5Gbps LAN, HDMI/DP,ATX)",
-                    "price": 255.57,
+                    "tier": "Tier 3",
+                    "title": "ASUS ROG STRIX X670E-E GAMING WIFI AMD X670 AM5 Ryzen\u2122 Desktop 9000 8000 & 7000 ATX motherboard, 18+2 power stages, DDR5, 4x M.2 slots with heatsink, PCIe\u00ae 5.0, USB 3.2 Gen 2x2, WiFi 6E, AI Cooling II",
+                    "price": 344.7,
                     "rating": 4.3,
-                    "reviews": 359,
-                    "link": "https://www.amazon.com/dp/B0CRF81BBC/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/81PracXCxWL._AC_SX355_.jpg"
+                    "reviews": 1787,
+                    "link": "https://www.amazon.com/dp/B0BDTHQTJV/?tag=1097fa-20 #X670E-ATX",
+                    "img": "https://m.media-amazon.com/images/I/81ohPDfik0L._AC_SY355_.jpg"
                 }
             ]
         }
@@ -252,44 +264,64 @@
             "name": "Dedicated GPU",
             "tiers": [
                 {
-                    "tier": "Budget",
+                    "tier": "Tier 1",
                     "title": "ASUS Dual GeForce RTX\u2122 5060 8GB GDDR7 OC Edition (PCIe 5.0, 8GB GDDR7, DLSS 4, HDMI 2.1b, DisplayPort 2.1b, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)",
                     "price": 369.99,
                     "rating": 4.6,
                     "reviews": 314,
-                    "link": "https://www.amazon.com/dp/B0F8PR9L3X/?tag=1097fa-20",
+                    "link": "https://www.amazon.com/dp/B0F8PR9L3X/?tag=1097fa-20 #RTX-5060",
                     "img": "https://m.media-amazon.com/images/I/81i5KcFKysL._AC_SY355_.jpg",
                     "benchmark": "1080p High | 60+ FPS"
                 },
                 {
-                    "tier": "Standard",
+                    "tier": "Tier 2",
                     "title": "ASUS Dual GeForce RTX\u2122 4070 Super EVO OC Edition 12GB GDDR6X (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1a, DisplayPort 1.4a, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)",
                     "price": 599.99,
                     "rating": 4.7,
                     "reviews": 2058,
-                    "link": "https://www.amazon.com/dp/B0CVCKX2GD/?tag=1097fa-20",
+                    "link": "https://www.amazon.com/dp/B0CVCKX2GD/?tag=1097fa-20 #RTX-4070",
                     "img": "https://m.media-amazon.com/images/I/81PChIf5pwL._AC_SY355_.jpg",
-                    "benchmark": "1440p Ultra | 100+ FPS"
+                    "benchmark": "1440p High | 60+ FPS"
                 },
                 {
-                    "tier": "Premium",
+                    "tier": "Tier 3",
                     "title": "XFX Radeon RX 7900XT Gaming Graphics Card with 20GB GDDR6, AMD RDNA 3 RX-79TMBABF9",
                     "price": 699.99,
                     "rating": 4.5,
                     "reviews": 8762,
-                    "link": "https://www.amazon.com/dp/B0BNLSDRKB/?tag=1097fa-20",
+                    "link": "https://www.amazon.com/dp/B0BNLSDRKB/?tag=1097fa-20 #RX-7900-XT",
                     "img": "https://m.media-amazon.com/images/I/41fOuNCg2mL._AC_SX355_.jpg",
-                    "benchmark": "4K High | 90+ FPS"
+                    "benchmark": "1440p Ultra | 100+ FPS"
                 },
                 {
-                    "tier": "Enthusiast",
+                    "tier": "Tier 4",
                     "title": "GIGABYTE GeForce RTX 5080 Gaming OC 16G Graphics Card, WINDFORCE Cooling System, 16GB 256-bit GDDR7, GV-N5080GAMING OC-16GD Video Card",
                     "price": 1499.99,
                     "rating": 4.5,
                     "reviews": 379,
-                    "link": "https://www.amazon.com/dp/B0DS2R6948/?tag=1097fa-20",
+                    "link": "https://www.amazon.com/dp/B0DS2R6948/?tag=1097fa-20 #RTX-5080",
                     "img": "https://m.media-amazon.com/images/I/71lZess7M8L._AC_SY355_.jpg",
-                    "benchmark": "4K Max | 120+ FPS"
+                    "benchmark": "4K High | 60+ FPS"
+                },
+                {
+                    "tier": "Tier 5",
+                    "title": "VIPERA NVIDIA GeForce RTX 4090 Founders Edition Graphic Card",
+                    "price": 3749.99,
+                    "rating": 4.7,
+                    "reviews": 207,
+                    "link": "https://www.amazon.com/dp/B0BJFRT43X/?tag=1097fa-20 #RTX-4090",
+                    "img": "https://m.media-amazon.com/images/I/514QPBuqGyL._AC_SX355_.jpg",
+                    "benchmark": "4K Ultra | 100+ FPS"
+                },
+                {
+                    "tier": "Tier 6",
+                    "title": "ASUS ROG Astral GeForce RTX\u2122 5090 OC Edition Graphics Card, NVIDIA (PCIe\u00ae 5.0, 32GB GDDR7, HDMI\u00ae/DP 2.1, 3.8-Slot, 4-Fan Design, Axial-tech Fans, Patented Vapor Chamber, Phase-Change GPU Thermal Pad)",
+                    "price": 4279.97,
+                    "rating": 4.4,
+                    "reviews": 179,
+                    "link": "https://www.amazon.com/dp/B0DS2WQZ2M/?tag=1097fa-20 #RTX-5090",
+                    "img": "https://m.media-amazon.com/images/I/811IbTkEvnL._AC_SY355_.jpg",
+                    "benchmark": "4K Max | 144+ FPS"
                 }
             ]
         }
@@ -299,39 +331,39 @@
             "name": "System Memory (DDR4)",
             "tiers": [
                 {
-                    "tier": "Budget",
-                    "title": "TEAMGROUP T-Force Vulcan Z DDR4 DRAM 16GB Kit (2x8GB) 3200MHz Desktop Memory Module (PC4-25600) CL16 Ram (Gray) - TLZGD416G3200HC16FDC01",
-                    "price": 139.99,
+                    "tier": "Tier 1",
+                    "title": "G.SKILL Trident Z RGB Series DDR4 RAM (XMP) 32GB (2x16GB) 3200MT/s CL16-18-18-38 1.35V Intel AMD Desktop Computer Memory U-DIMM (F4-3200C16D-32GTZR)",
+                    "price": 299.99,
                     "rating": 4.8,
-                    "reviews": 1636,
-                    "link": "https://www.amazon.com/dp/B08PJNVWNZ/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/71QYVWwXVlL._AC_SY355_PIbundle-2,TopRight,0,0_SH20_.jpg"
+                    "reviews": 4482,
+                    "link": "https://www.amazon.com/dp/B07DMNZY56/?tag=1097fa-20 #32GB-3200MHz",
+                    "img": "https://m.media-amazon.com/images/I/61l4EStxhnL._AC_SX355_.jpg"
                 },
                 {
-                    "tier": "Standard",
-                    "title": "TEAMGROUP T-Force Vulcan Z DDR4 32GB Kit (2x16GB) 3200MHz (PC4-25600) CL16 Desktop Memory Module Ram (Red) - TLZRD432G3200HC16FDC01",
-                    "price": 0.0,
+                    "tier": "Tier 2",
+                    "title": "G.SKILL Trident Z RGB Series DDR4 RAM (XMP) 32GB (2x16GB) 3600MT/s CL18-22-22-42 1.35V Intel AMD Desktop Computer Memory U-DIMM (F4-3600C18D-32GTZR)",
+                    "price": 319.99,
                     "rating": 4.8,
-                    "reviews": 803,
-                    "link": "https://www.amazon.com/dp/B08NVLYJK2/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/71OXBkymH1L._AC_SY355_PIbundle-2,TopRight,0,0_SH20_.jpg"
+                    "reviews": 4379,
+                    "link": "https://www.amazon.com/dp/B08176KLZT/?tag=1097fa-20 #32GB-3600MHz",
+                    "img": "https://m.media-amazon.com/images/I/61l4EStxhnL._AC_SX355_PIbundle-2,TopRight,0,0_SH20_.jpg"
                 },
                 {
-                    "tier": "Premium",
-                    "title": "TEAMGROUP T-Force Vulcan Z DDR4 32GB Kit (2x16GB) 3600MHz (PC4-28800) CL18 Desktop Memory Module Ram Red - TLZRD432G3600HC18JDC01",
-                    "price": 0.0,
-                    "rating": 4.7,
-                    "reviews": 1585,
-                    "link": "https://www.amazon.com/dp/B08MF4M9VN/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/71OXBkymH1L._AC_SY355_PIbundle-2,TopRight,0,0_SH20_.jpg"
+                    "tier": "Tier 3",
+                    "title": "G.SKILL Trident Z RGB Series DDR4 RAM (XMP) 64GB (2x32GB) 3200MT/s CL16-18-18-38 1.35V Intel AMD Desktop Computer Memory U-DIMM (F4-3200C16D-64GTZR)",
+                    "price": 574.99,
+                    "rating": 4.8,
+                    "reviews": 4482,
+                    "link": "https://www.amazon.com/dp/B087T2B287/?tag=1097fa-20 #64GB-3200MHz",
+                    "img": "https://m.media-amazon.com/images/I/71ddL4AfvML._AC_SX355_PIbundle-2,TopRight,0,0_SH20_.jpg"
                 },
                 {
-                    "tier": "Enthusiast",
+                    "tier": "Tier 4",
                     "title": "G.SKILL Trident Z RGB Series DDR4 RAM (XMP) 64GB (2x32GB) 3600MT/s CL18-22-22-42 1.35V Intel AMD Desktop Computer Memory U-DIMM (F4-3600C18D-64GTZR)",
                     "price": 599.99,
                     "rating": 4.8,
                     "reviews": 4379,
-                    "link": "https://www.amazon.com/dp/B087T7DWSN/?tag=1097fa-20",
+                    "link": "https://www.amazon.com/dp/B087T7DWSN/?tag=1097fa-20 #64GB-3600MHz",
                     "img": "https://m.media-amazon.com/images/I/61WZdLnrPkL._AC_SX355_PIbundle-2,TopRight,0,0_SH20_.jpg"
                 }
             ]
@@ -340,40 +372,40 @@
             "name": "System Memory (DDR5)",
             "tiers": [
                 {
-                    "tier": "Budget",
-                    "title": "CORSAIR Vengeance RGB DDR5 RAM 16GB (2x8GB) 5200MHz CL40 Intel XMP iCUE Compatible Computer Memory - Black (CMH16GX5M2B5200C40)",
-                    "price": 257.49,
-                    "rating": 4.7,
-                    "reviews": 1620,
-                    "link": "https://www.amazon.com/dp/B0D9PRVBRZ/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/61EVf-QxpvL._AC_SX355_.jpg"
-                },
-                {
-                    "tier": "Standard",
-                    "title": "CORSAIR Vengence RGB DDR5 RAM 32GB (2x16GB) 6000MHz CL36-44-44-96 1.35V Intel XMP 3.0 Computer Memory \u2013 Black (CMH32GX5M2E6000C36)",
-                    "price": 369.99,
-                    "rating": 4.8,
-                    "reviews": 3652,
-                    "link": "https://www.amazon.com/dp/B0BZHTVHN5/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/61XsKRKsGoL._AC_SX355_.jpg"
-                },
-                {
-                    "tier": "Premium",
-                    "title": "CORSAIR Vengence RGB DDR5 RAM 32GB (2x16GB) 6000MHz CL36-44-44-96 1.35V Intel XMP 3.0 Computer Memory \u2013 Black (CMH32GX5M2E6000C36)",
-                    "price": 369.99,
-                    "rating": 4.8,
-                    "reviews": 3652,
-                    "link": "https://www.amazon.com/dp/B0BZHTVHN5/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/61XsKRKsGoL._AC_SX355_.jpg"
-                },
-                {
-                    "tier": "Enthusiast",
-                    "title": "G.SKILL Trident Z5 Neo RGB Series DDR5 RAM (AMD Expo) 64GB (2x32GB) 6000MT/s CL30-40-40-96 1.40V Desktop Computer Memory U-DIMM - Matte Black (F5-6000J3040G32GX2-TZ5NR)",
+                    "tier": "Tier 1",
+                    "title": "CORSAIR Vengeance RGB DDR5 RAM 32GB (1x32GB) 6000MHz CL38-44-44-96 1.35V AMD Expo Intel XMP 3.0 Desktop Computer Memory \u2013 Gray (CMH32GX5M1E6000Z38)",
                     "price": 0.0,
                     "rating": 4.7,
-                    "reviews": 932,
-                    "link": "https://www.amazon.com/dp/B0BJNTLJ5X/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/61mydyeMZEL._AC_SX355_PIbundle-2,TopRight,0,0_SH20_.jpg"
+                    "reviews": 4879,
+                    "link": "https://www.amazon.com/dp/B0F2B26SMC/?tag=1097fa-20 #32GB-5600MHz",
+                    "img": "https://m.media-amazon.com/images/I/61RlGEONKCL._AC_SX355_.jpg"
+                },
+                {
+                    "tier": "Tier 2",
+                    "title": "CORSAIR Vengeance RGB DDR5 RAM 48GB (2x24GB) 6000MHz CL30-36-36-76 1.4V AMD Expo Intel XMP 3.0 Desktop Computer Memory \u2013 Gray (CMH48GX5M2B6000Z30)",
+                    "price": 0.0,
+                    "rating": 4.7,
+                    "reviews": 4879,
+                    "link": "https://www.amazon.com/dp/B0DLBDBJDF/?tag=1097fa-20 #32GB-6000MHz",
+                    "img": "https://m.media-amazon.com/images/I/71O+5BneBVL._AC_SX355_.jpg"
+                },
+                {
+                    "tier": "Tier 3",
+                    "title": "CORSAIR VENGEANCE RGB DDR5 64GB (2x32GB) DDR5 6000MHz CL30 AMD EXPO Intel XMP iCUE Compatible Computer Memory \u2013 Gray (CMH64GX5M2B6000Z30)",
+                    "price": 0.0,
+                    "rating": 4.7,
+                    "reviews": 4879,
+                    "link": "https://www.amazon.com/dp/B0C5M9P5GK/?tag=1097fa-20 #64GB-6000MHz",
+                    "img": "https://m.media-amazon.com/images/I/71O+5BneBVL._AC_SX355_.jpg"
+                },
+                {
+                    "tier": "Tier 4",
+                    "title": "CORSAIR Vengeance RGB DDR5 96GB (2x48GB) DDR5 6000MHz CL30-36-36-76 1.40V AMD Expo & Intel XMP Desktop Computer Memory \u2013 Gray (CMH96GX5M2B6000Z30)",
+                    "price": 0.0,
+                    "rating": 4.7,
+                    "reviews": 4879,
+                    "link": "https://www.amazon.com/dp/B0DT4L3CPH/?tag=1097fa-20 #64GB-6400MHz-RGB",
+                    "img": "https://m.media-amazon.com/images/I/71O+5BneBVL._AC_SX355_.jpg"
                 }
             ]
         }
@@ -383,40 +415,31 @@
             "name": "Primary NVMe SSD",
             "tiers": [
                 {
-                    "tier": "Budget",
-                    "title": "SanDisk 1TB SSD Plus M.2 NVMe SSD - PCIE Gen 3.0, Up to 3,200 MB/s - Internal Solid State Drive - SDSSDA3N-1T00-G26",
-                    "price": 139.31,
-                    "rating": 4.8,
-                    "reviews": 2174,
-                    "link": "https://www.amazon.com/dp/B0CN3N3591/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/51YDo05UMyL._AC_SX355_.jpg"
-                },
-                {
-                    "tier": "Standard",
-                    "title": "WD_Black SN7100 1TB NVMe SSD - Gen4 PCIe, M.2 2280, Up to 7,250 MB/s Read Speed, Up to 6,900 MB/s Write Speed, Next Gen TLC 3D NAND, for Laptops, Handheld Gaming Devices - WDS100T4X0E",
-                    "price": 189.99,
+                    "tier": "Tier 1",
+                    "title": "Samsung 990 PRO SSD 1TB PCIe 4.0 M.2 2280 Internal Solid State Hard Drive, Seq. Read Speeds Up to 7,450 MB/s for High End Computing, Gaming, and Heavy Duty Workstations, MZ-V9P1T0B/AM",
+                    "price": 199.99,
                     "rating": 4.7,
-                    "reviews": 5009,
-                    "link": "https://www.amazon.com/dp/B0DN7CYYSD/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/61uDl4amtnL._AC_SY355_.jpg"
+                    "reviews": 17272,
+                    "link": "https://www.amazon.com/dp/B0BHJF2VRN/?tag=1097fa-20 #1TB-Gen4-NVMe",
+                    "img": "https://m.media-amazon.com/images/I/61ZL9Qpo1-L._AC_SY355_.jpg"
                 },
                 {
-                    "tier": "Premium",
-                    "title": "SanDisk 2TB SSD Plus M.2 NVMe SSD - PCIE Gen 3.0, Up to 3,200 MB/s - Internal Solid State Drive - SDSSDA3N-2T00-G26",
-                    "price": 449.99,
-                    "rating": 4.8,
-                    "reviews": 2174,
-                    "link": "https://www.amazon.com/dp/B0CN3MNWM4/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/51lO3K4uFZL._AC_SX355_.jpg"
+                    "tier": "Tier 2",
+                    "title": "Samsung 990 PRO SSD 2TB NVMe M.2 PCIe Gen4, M.2 2280 Internal Solid State Hard Drive, Seq. Read Speeds Up to 7,450 MB/s for High End Computing, Gaming, and Heavy Duty Workstations, MZ-V9P2T0B/AM",
+                    "price": 391.0,
+                    "rating": 4.7,
+                    "reviews": 17272,
+                    "link": "https://www.amazon.com/dp/B0BHJJ9Y77/?tag=1097fa-20 #2TB-Gen4-NVMe",
+                    "img": "https://m.media-amazon.com/images/I/71OWtcxKgvL._AC_SX355_.jpg"
                 },
                 {
-                    "tier": "Enthusiast",
-                    "title": "Crucial T710 PCIe Gen5 NVMe 4TB SSD, Up to 14,900 MB/s, Laptop & Desktop Compatible (PC), for Creatives and Hardcore Gamers, Solid State Drive, Includes 1Mo Adobe CC \u2013 CT4000T710SSD8-01",
-                    "price": 558.71,
-                    "rating": 4.6,
-                    "reviews": 417,
-                    "link": "https://www.amazon.com/dp/B0F9XP15XL/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/51WMvihHRvL._AC_SY355_.jpg"
+                    "tier": "Tier 3",
+                    "title": "Samsung 990 PRO SSD 4TB PCIe 4.0 M.2 2280 Internal Solid State Hard Drive, Seq. Read Speeds Up to 7,450 MB/s for High End Computing, Gaming, and Heavy Duty Workstations, MZ-V9P4T0B/AM",
+                    "price": 722.69,
+                    "rating": 4.7,
+                    "reviews": 17272,
+                    "link": "https://www.amazon.com/dp/B0CHGT1KFJ/?tag=1097fa-20 #4TB-Gen4-NVMe",
+                    "img": "https://m.media-amazon.com/images/I/81WuG6lQuDL._AC_SX355_.jpg"
                 }
             ]
         }
@@ -426,39 +449,30 @@
             "name": "Power Supply",
             "tiers": [
                 {
-                    "tier": "Budget",
+                    "tier": "Tier 1",
                     "title": "MSI MAG A650BN, Non-Modular Compact 650W Power Supply, 80+ Bronze, Low-Noise Fan, Active PFC Design, 5 Year Warranty",
-                    "price": 59.0,
+                    "price": 59.99,
                     "rating": 4.7,
                     "reviews": 3628,
-                    "link": "https://www.amazon.com/dp/B0991TZ399/?tag=1097fa-20",
+                    "link": "https://www.amazon.com/dp/B0991TZ399/?tag=1097fa-20 #650W-Bronze",
                     "img": "https://m.media-amazon.com/images/I/81eLlIQ5PsL._AC_SY355_.jpg"
                 },
                 {
-                    "tier": "Standard",
-                    "title": "MSI MAG A750GL PCIE5, Fully Modular Compact Gaming 750W Power Supply, 80+ Gold, ATX 3.1 & PCIe 5.1 Ready, Native Dual-Color 12V-2x6 Cable, 10 Year Warranty",
-                    "price": 95.99,
-                    "rating": 4.6,
-                    "reviews": 5342,
-                    "link": "https://www.amazon.com/dp/B0CC3QBGDL/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/716c-SjLwPL._AC_SY355_.jpg"
-                },
-                {
-                    "tier": "Premium",
+                    "tier": "Tier 2",
                     "title": "MSI MAG A850GL PCIE5, Fully Modular Compact Gaming 850W Power Supply, 80+ Gold, ATX 3.1 & PCIe 5.1 Ready, Native Dual-Color 12V-2x6 Cable, 10 Year Warranty",
                     "price": 118.99,
                     "rating": 4.6,
-                    "reviews": 5342,
-                    "link": "https://www.amazon.com/dp/B0CB9MSJ5N/?tag=1097fa-20",
+                    "reviews": 5343,
+                    "link": "https://www.amazon.com/dp/B0CB9MSJ5N/?tag=1097fa-20 #850W-Gold-ATX3",
                     "img": "https://m.media-amazon.com/images/I/71b3DFHWd7L._AC_SY355_.jpg"
                 },
                 {
-                    "tier": "Enthusiast",
+                    "tier": "Tier 3",
                     "title": "msi MAG A1000GL PCIE5, Fully Modular Compact Gaming 1000W Power Supply, 80+ Gold, ATX 3.1 & PCIe 5.1 Ready, Native Dual-Color 12V-2x6 Cable, 10 Year Warranty",
                     "price": 134.99,
                     "rating": 4.6,
-                    "reviews": 5342,
-                    "link": "https://www.amazon.com/dp/B0CT3XNCZ9/?tag=1097fa-20",
+                    "reviews": 5343,
+                    "link": "https://www.amazon.com/dp/B0CT3XNCZ9/?tag=1097fa-20 #1000W-Gold-ATX3",
                     "img": "https://m.media-amazon.com/images/I/81Di9ebR9uL._AC_SY355_.jpg"
                 }
             ]
@@ -469,39 +483,30 @@
             "name": "CPU Cooler",
             "tiers": [
                 {
-                    "tier": "Budget",
-                    "title": "Thermaltake ASTRIA 200 ARGB CPU Cooler, Compatible with Latest Intel LGA 1851/1700 and AMD AM5 CPU, Single Tower, 210W TDP Cooling Power, CL-P119-AL12SW-A",
-                    "price": 23.99,
-                    "rating": 4.6,
-                    "reviews": 1277,
-                    "link": "https://www.amazon.com/dp/B0D4X3TCNC/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/61BWUtIzE9L._SX342_.jpg"
-                },
-                {
-                    "tier": "Standard",
-                    "title": "Thermalright Peerless Assassin 120 SE CPU Cooler, 6 Heat Pipes AGHP Technology, Dual 120mm PWM Fans, 1550RPM Speed, for AMD:AM4 AM5/Intel LGA 1700/1150/1151/1200/1851,PC Cooler",
-                    "price": 34.9,
-                    "rating": 4.7,
-                    "reviews": 4965,
-                    "link": "https://www.amazon.com/dp/B09LGY38L4/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/71j6VKsz-fL._AC_SY355_.jpg"
-                },
-                {
-                    "tier": "Premium",
+                    "tier": "Tier 1",
                     "title": "Thermalright Aqua Elite 240 V3 Water Cooling CPU Cooler, Double PWM ARGB Fans with S-FDB Bearings,Efficient PWM Controlled Pump,for AMD/AM4/AM5, Intel LGA1150/1151/1200/2011/1700, (AE240 V3)",
                     "price": 44.9,
                     "rating": 4.6,
                     "reviews": 357,
-                    "link": "https://www.amazon.com/dp/B0CCNS5NZ9/?tag=1097fa-20",
+                    "link": "https://www.amazon.com/dp/B0CCNS5NZ9/?tag=1097fa-20 #240mm-AIO",
                     "img": "https://m.media-amazon.com/images/I/611EbTikbpL._SX342_.jpg"
                 },
                 {
-                    "tier": "Enthusiast",
+                    "tier": "Tier 2",
+                    "title": "ARCTIC Liquid Freezer III Pro 360 A-RGB - AIO CPU Cooler, 3 x 120 mm Water Cooling, 38 mm Radiator, PWM Pump, VRM Fan, AMD AM5/AM4, Intel LGA1851/1700 Contact Frame - Black",
+                    "price": 98.99,
+                    "rating": 4.5,
+                    "reviews": 1960,
+                    "link": "https://www.amazon.com/dp/B0DLWFCVSD/?tag=1097fa-20 #360mm-AIO",
+                    "img": "https://m.media-amazon.com/images/I/61lSHQayebL._SX342_.jpg"
+                },
+                {
+                    "tier": "Tier 3",
                     "title": "CORSAIR iCUE Link Titan 360 RX RGB Liquid CPU Cooler \u2013 360mm AIO \u2013 Low-Noise \u2013 FlowDrive Cooling Engine \u2013 Intel LGA 1851/1700, AMD AM5/AM4 \u2013 3X RX120 RGB Fans \u2013 iCUE Link System Hub Included \u2013 Black",
                     "price": 159.99,
                     "rating": 4.6,
                     "reviews": 1132,
-                    "link": "https://www.amazon.com/dp/B0D6BFBLTK/?tag=1097fa-20",
+                    "link": "https://www.amazon.com/dp/B0D6BFBLTK/?tag=1097fa-20 #360mm-LCD-AIO",
                     "img": "https://m.media-amazon.com/images/I/71ppn7ur0oL._SX342_.jpg"
                 }
             ]
@@ -512,40 +517,58 @@
             "name": "ATX Mid-Tower Case",
             "tiers": [
                 {
-                    "tier": "Budget",
-                    "title": "MONTECH XR-B, ATX Mid-Tower PC Gaming Case, 3x120mm ARGB PWM Fans Pre-Installed, Full-View Dual Tempered Glass Panel, Wood-Grain Design I/O Interface, 4090 GPUs, 360mm Radiator Support, Black",
-                    "price": 69.9,
-                    "rating": 4.6,
-                    "reviews": 2176,
-                    "link": "https://www.amazon.com/dp/B0D5PHHCK5/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/61qUWFuniJL._AC_SY355_.jpg"
+                    "tier": "Tier 1",
+                    "title": "Lian Li V100 ATX Mid-Tower PC Case, 4 x 120mm ARGB PWM Fans Pre-Installed, LED RGB Strip, Display Platform with Tempered Glass, Support 420mm GPUs, 360mm Radiator, Optimized Airflow - Black (V100RX)",
+                    "price": 74.99,
+                    "rating": 4.7,
+                    "reviews": 232,
+                    "link": "https://www.amazon.com/dp/B0F2T66QC9/?tag=1097fa-20 #Budget-ATX-Mesh",
+                    "img": "https://m.media-amazon.com/images/I/71rMfdhZejL._AC_SX355_.jpg"
                 },
                 {
-                    "tier": "Standard",
+                    "tier": "Tier 2",
                     "title": "CORSAIR 4000D RS ARGB Frame Modular Mid-Tower ATX PC Case, High Airflow, 3X Pre-Installed RS Fans, InfiniRail\u2122 Mounting System, ASUS BTF, MSI Zero, Gigabyte Stealth, Black",
                     "price": 94.99,
                     "rating": 4.6,
                     "reviews": 1378,
-                    "link": "https://www.amazon.com/dp/B0DFHNV7TK/?tag=1097fa-20",
+                    "link": "https://www.amazon.com/dp/B0DFHNV7TK/?tag=1097fa-20 #High-Value-Airflow",
                     "img": "https://m.media-amazon.com/images/I/61-u3G8Bg9L._AC_SY355_.jpg"
                 },
                 {
-                    "tier": "Premium",
-                    "title": "Lian Li O11D EVO RGB E-ATX Gaming Dual Chamber case - ARGB Lighting Strips - Up to 420mm Radiator - Cable Management - Front and Side Tempered Glass Panels - Reversible Chassis (O11DERGBX.US)",
-                    "price": 159.99,
-                    "rating": 4.7,
-                    "reviews": 863,
-                    "link": "https://www.amazon.com/dp/B0CRKVN35N/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/712giHWFxxL._AC_SY355_.jpg"
+                    "tier": "Tier 3",
+                    "title": "Lian Li O11Vision Compact White-Steel-Tempered Glass ATX Mid Tower Computer Case-Back Connect Support-O11VPW",
+                    "price": 124.99,
+                    "rating": 4.8,
+                    "reviews": 1084,
+                    "link": "https://www.amazon.com/dp/B0DJPY63XL/?tag=1097fa-20 #Standard-Airflow",
+                    "img": "https://m.media-amazon.com/images/I/61GGKCt2tKL._AC_SY355_.jpg"
                 },
                 {
-                    "tier": "Enthusiast",
+                    "tier": "Tier 4",
                     "title": "Fractal Design North Momentum Black - Glass Side Panel - Genuine Blackened Oak Wood Front - High Airflow PC Gaming Case - Three Powerful 120mm Momentum Fans Included - ATX Support",
                     "price": 215.01,
                     "rating": 4.7,
                     "reviews": 2306,
-                    "link": "https://www.amazon.com/dp/B0FGPRBFWJ/?tag=1097fa-20",
+                    "link": "https://www.amazon.com/dp/B0FGPRBFWJ/?tag=1097fa-20 #Premium-Airflow",
                     "img": "https://m.media-amazon.com/images/I/71cABFoKjmL._AC_SY355_.jpg"
+                },
+                {
+                    "tier": "Tier 5",
+                    "title": "Lian Li LANCOOL 217 Genuine Walnut Wood Computer Case, Mid-Tower ATX PC Case with 5 Pre-Installed PWM Fans 2x170mm, 2x120mm & 1x140mm, Flexible PSU & Cable Installation - Black (LAN217X)",
+                    "price": 119.99,
+                    "rating": 4.8,
+                    "reviews": 217,
+                    "link": "https://www.amazon.com/dp/B0DWF95QP7/?tag=1097fa-20 #Dual-Chamber",
+                    "img": "https://m.media-amazon.com/images/I/8131bpKa8BL._AC_SY355_.jpg"
+                },
+                {
+                    "tier": "Tier 6",
+                    "title": "Antec Flux Pro, 6 x PWM Fans Included, High-Airflow Front Panel with Walnut Wood, iShift PSU 90\u00b0 Mount, USB3.0 x 2, Type-C, 420mm Radiator Support, Temp. Display, Full-Tower E-ATX PC Case",
+                    "price": 179.99,
+                    "rating": 4.7,
+                    "reviews": 425,
+                    "link": "https://www.amazon.com/dp/B0DDNS2SY3/?tag=1097fa-20 #Designer-Showcase",
+                    "img": "https://m.media-amazon.com/images/I/81Bs3SBtJ1L._AC_SY355_.jpg"
                 }
             ]
         }
@@ -555,45 +578,69 @@
             "name": "Gaming Monitor",
             "tiers": [
                 {
-                    "tier": "Budget",
+                    "tier": "Tier 1",
                     "title": "Philips New 24 inch Frameless Full HD (1920 x 1080) 100Hz Monitor, VESA, HDMI x1, VGA Port x1, Eye Care, 4 Year Advance Replacement Warranty, 241V8LB, Black",
-                    "price": 74.99,
+                    "price": 74.98,
                     "rating": 4.6,
                     "reviews": 5583,
-                    "link": "https://www.amazon.com/dp/B0C8ZKV5R9/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/71oilmGrVuL._AC_SY355_.jpg"
+                    "link": "https://www.amazon.com/dp/B0C8ZKV5R9/?tag=1097fa-20 #1080p-144Hz",
+                    "img": "https://m.media-amazon.com/images/I/71oilmGrVuL._AC_SY355_.jpg",
+                    "benchmark": "1080p | 100Hz+"
                 },
                 {
-                    "tier": "Standard",
+                    "tier": "Tier 2",
                     "title": "acer 27 Inch Monitor- KB272-27 Inch FHD IPS (1920 x 1080) Display, Up to 120Hz Refresh Rate, 99% sRGB, Tilt, Adaptive-Sync Support (FreeSync Compatible) 1ms (VRB), sRGB 99% Color, HDMI & VGA Ports",
                     "price": 99.99,
                     "rating": 4.6,
                     "reviews": 1512,
-                    "link": "https://www.amazon.com/dp/B0D9MK23S7/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/71e5GgPXQzL._AC_SX355_.jpg"
+                    "link": "https://www.amazon.com/dp/B0D9MK23S7/?tag=1097fa-20 #1440p-144Hz",
+                    "img": "https://m.media-amazon.com/images/I/71e5GgPXQzL._AC_SX355_.jpg",
+                    "benchmark": "1080p | 144Hz+ High Refresh"
                 },
                 {
-                    "tier": "Premium",
-                    "title": "Samsung 32-Inch Flat Computer Monitor, 75Hz, Borderless Display, AMD FreeSync, Game Mode, Advanced Eye Care, HDMI and DisplayPort, LS32B304NWNXGO, 2024",
-                    "price": 149.99,
+                    "tier": "Tier 3",
+                    "title": "Dell 27 Plus 4K Monitor - S2725QS - 27-inch 4K (3840 x 2160) 120Hz 16:9 Display, IPS Panel, AMD FreeSync Premium, sRGB 99%, Integrated Speakers, 1500:1 Contrast Ratio, Comfortview - Ash White",
+                    "price": 271.99,
                     "rating": 4.5,
-                    "reviews": 1425,
-                    "link": "https://www.amazon.com/dp/B0D6CKL4HV/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/81rcnsbOb4L._AC_SX355_.jpg"
+                    "reviews": 693,
+                    "link": "https://www.amazon.com/dp/B0F1GF1KFC/?tag=1097fa-20 #1440p-240Hz",
+                    "img": "https://m.media-amazon.com/images/I/61pF09VcRPL._AC_SY355_.jpg",
+                    "benchmark": "1440p | 144Hz+ Sweet Spot"
                 },
                 {
-                    "tier": "Enthusiast",
-                    "title": "Samsung 27\" Essential S3 (S36GD) Series FHD 1800R Curved Computer Monitor, 100Hz, Game Mode, Advanced Eye Comfort, HDMI and D-sub Ports, LS27D366GANXZA, 2024",
-                    "price": 119.99,
+                    "tier": "Tier 4",
+                    "title": "ASUS TUF Gaming 27\u201d 4K HDR Monitor (VG27UQ1A) \u2013 160Hz, 1ms, Extreme Low Motion Blur Sync, NVIDIA G-SYNC Compatible, AMD FreeSync Premium, 95% DCI-P3, DisplayWidget, 3 yr Warranty",
+                    "price": 379.0,
                     "rating": 4.5,
-                    "reviews": 1892,
-                    "link": "https://www.amazon.com/dp/B0DB9Q5G3R/?tag=1097fa-20",
-                    "img": "https://m.media-amazon.com/images/I/619WSKm18ZL._AC_SY355_.jpg"
+                    "reviews": 3065,
+                    "link": "https://www.amazon.com/dp/B0DHG1GTG2/?tag=1097fa-20 #4K-144Hz",
+                    "img": "https://m.media-amazon.com/images/I/61KcZ+6kvXL._AC_SX355_.jpg",
+                    "benchmark": "1440p | 240Hz+ Competitive"
+                },
+                {
+                    "tier": "Tier 5",
+                    "title": "ASUS ROG Strix 27\u201d 4K HDR400 USB-C Gaming Monitor(XG27UCS)\u2013UHD (3840 x 2160), 160Hz, 1ms, Fast IPS,130% sRGB,Extreme Low Motion Blur Sync, G-Sync Compatible, DisplayWidget, Tripod socket, 3yr warranty",
+                    "price": 329.0,
+                    "rating": 4.4,
+                    "reviews": 2480,
+                    "link": "https://www.amazon.com/dp/B0CV236YSW/?tag=1097fa-20 #4K-160Hz",
+                    "img": "https://m.media-amazon.com/images/I/71-Bv5z6UTL._AC_SY355_.jpg",
+                    "benchmark": "4K | 144Hz+ Ultra HD"
+                },
+                {
+                    "tier": "Tier 6",
+                    "title": "Samsung 27\u201d Odyssey OLED G5 (G50SF) QHD & QD-OLED Gaming Monitor, 180Hz Refresh Rate, 0.03ms (GtG) Response Time, NVIDIA G-Sync Compatible, AMD FreeSync\u2122, LS27FG500SNXZA",
+                    "price": 429.99,
+                    "rating": 4.4,
+                    "reviews": 242,
+                    "link": "https://www.amazon.com/dp/B0FNQDNGXY/?tag=1097fa-20 #4K-OLED",
+                    "img": "https://m.media-amazon.com/images/I/818+AiwCClL._AC_SX355_.jpg",
+                    "benchmark": "4K OLED | Flawless Motion"
                 }
             ]
         }
     ],
     "_metadata": {
-        "last_updated": "March 23, 2026 at 10:33 AM"
+        "last_updated": "March 23, 2026 at 06:04 PM"
     }
 }
