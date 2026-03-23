@@ -6,7 +6,7 @@ echo "Time: $(date)"
 echo "========================================"
 
 echo "[+] Running update_prices.py..."
-python3 update_prices.py
+/home/dsmason321/venv/bin/python3 update_prices.py
 
 if [[ `git status --porcelain products.json` ]]; then
     echo "[+] Price or availability changes detected. Committing to repository..."
