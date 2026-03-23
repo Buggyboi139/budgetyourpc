@@ -25,8 +25,8 @@
             --border-highlight: rgba(255, 255, 255, 0.2);
             --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.4);
             --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.6);
-            --gradient-primary: linear-gradient(135deg, #10b981 0%, #a3e635 100%);
-            --gradient-hover: linear-gradient(135deg, #34d399 0%, #bef264 100%);
+            --gradient-primary: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+            --gradient-hover: linear-gradient(135deg, #10b981 0%, #34d399 50%, #6ee7b7 100%);
             --radius-lg: 32px;
             --radius-md: 20px;
         }
@@ -40,8 +40,8 @@
             color: var(--text-main);
             background-color: #07090f;
             background-image: radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.15) 0, transparent 40%), 
-                              radial-gradient(at 100% 0%, rgba(163, 230, 53, 0.1) 0, transparent 40%), 
-                              radial-gradient(at 50% 100%, rgba(52, 211, 153, 0.05) 0, transparent 50%);
+                              radial-gradient(at 100% 0%, rgba(52, 211, 153, 0.1) 0, transparent 40%), 
+                              radial-gradient(at 50% 100%, rgba(110, 231, 183, 0.05) 0, transparent 50%);
             min-height: 100vh;
             overflow-x: hidden;
             padding-left: 20px; 
@@ -56,7 +56,6 @@
             background: var(--gradient-primary);
             z-index: 200; 
             box-shadow: 2px 0 15px rgba(16, 185, 129, 0.5); 
-            transition: background 0.4s ease, box-shadow 0.4s ease;
         }
 
         nav {
@@ -136,7 +135,7 @@
 
         input[value="AMD"]:checked + .priority-label, input[value="Intel"]:checked + .priority-label,
         input[value="DDR4"]:checked + .priority-label, input[value="DDR5"]:checked + .priority-label {
-            border-color: #10b981; color: #10b981; background: rgba(16, 185, 129, 0.1); box-shadow: 0 10px 20px rgba(16, 185, 129, 0.1); transform: translateY(-2px);
+            border-color: #86efac; color: #86efac; background: rgba(134, 239, 172, 0.15); box-shadow: 0 10px 20px rgba(134, 239, 172, 0.1); transform: translateY(-2px);
         }
 
         .budget-display { font-size: 5rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -2px; }
@@ -558,35 +557,35 @@
             document.getElementById('gotItBtn').addEventListener('click', () => document.getElementById('about-modal').classList.remove('show-modal'));
 
             const categoryColors = {
-                "CPU & Motherboard": "#bfa2db", 
-                "Graphics Card (GPU)": "#ffb7b2", 
-                "Memory (RAM)": "#a1c4fd", 
-                "Storage (SSD/HDD)": "#fbd38d", 
-                "Power Supply (PSU)": "#b6eacb", 
-                "Cooling": "#ffdac1", 
-                "Case": "#c1c8e4",
-                "Peripherals & Extras": "#d4af37"
+                "CPU & Motherboard": "#10b981", 
+                "Graphics Card (GPU)": "#34d399", 
+                "Memory (RAM)": "#6ee7b7", 
+                "Storage (SSD/HDD)": "#a7f3d0", 
+                "Power Supply (PSU)": "#059669", 
+                "Cooling": "#047857", 
+                "Case": "#86efac",
+                "Monitor": "#4ade80" 
             };
 
             const profiles = {
                 budget: {
-                    weights: { "CPU & Motherboard": 0.25, "Graphics Card (GPU)": 0.30, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.10, "Cooling": 0.05, "Case": 0.10, "Peripherals & Extras": 0.0 },
+                    weights: { "CPU & Motherboard": 0.25, "Graphics Card (GPU)": 0.30, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.10, "Cooling": 0.05, "Case": 0.10, "Monitor": 0.15 },
                     desc: "Focuses purely on getting the system running with essential components, minimizing costs on aesthetics and extras."
                 },
                 balanced: {
-                    weights: { "CPU & Motherboard": 0.20, "Graphics Card (GPU)": 0.40, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.08, "Cooling": 0.05, "Case": 0.07, "Peripherals & Extras": 0.0 },
+                    weights: { "CPU & Motherboard": 0.20, "Graphics Card (GPU)": 0.35, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.08, "Cooling": 0.05, "Case": 0.07, "Monitor": 0.15 },
                     desc: "A well-rounded allocation ensuring no single component bottlenecks the others, maximizing gaming performance per dollar."
                 },
                 safety: {
-                    weights: { "CPU & Motherboard": 0.35, "Graphics Card (GPU)": 0.20, "Memory (RAM)": 0.15, "Storage (SSD/HDD)": 0.15, "Power Supply (PSU)": 0.08, "Cooling": 0.07, "Case": 0.00, "Peripherals & Extras": 0.0 },
+                    weights: { "CPU & Motherboard": 0.35, "Graphics Card (GPU)": 0.20, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.15, "Power Supply (PSU)": 0.08, "Cooling": 0.07, "Case": 0.00, "Monitor": 0.10 },
                     desc: "Prioritizes processing power, fast storage, and memory for productivity, rendering, and heavy multi-tasking."
                 },
                 aesthetic: {
-                    weights: { "CPU & Motherboard": 0.15, "Graphics Card (GPU)": 0.35, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.08, "Cooling": 0.10, "Case": 0.12, "Peripherals & Extras": 0.0 },
+                    weights: { "CPU & Motherboard": 0.15, "Graphics Card (GPU)": 0.30, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.08, "Cooling": 0.10, "Case": 0.12, "Monitor": 0.15 },
                     desc: "Maximized budget for high-quality cases, RGB lighting, liquid cooling, and design-forward components."
                 },
                 organic: {
-                    weights: { "CPU & Motherboard": 0.25, "Graphics Card (GPU)": 0.40, "Memory (RAM)": 0.08, "Storage (SSD/HDD)": 0.08, "Power Supply (PSU)": 0.10, "Cooling": 0.09, "Case": 0.00, "Peripherals & Extras": 0.0 },
+                    weights: { "CPU & Motherboard": 0.25, "Graphics Card (GPU)": 0.35, "Memory (RAM)": 0.08, "Storage (SSD/HDD)": 0.08, "Power Supply (PSU)": 0.10, "Cooling": 0.09, "Case": 0.00, "Monitor": 0.20 },
                     desc: "Heavily weighted towards premium cooling, high-end power delivery, and top-tier parts for overclocking and maximum fidelity."
                 }
             };
@@ -598,43 +597,14 @@
             };
 
             Object.keys(categoryColors).forEach(cat => {
-                const isChecked = cat === "Peripherals & Extras" ? "" : "checked";
-                
                 const labelHtml = `
                     <label>
-                        <input type="checkbox" value="${cat}" class="cat-checkbox category-toggle" ${isChecked}>
+                        <input type="checkbox" value="${cat}" class="cat-checkbox category-toggle" checked>
                         <div class="cat-label">${cat}</div>
                     </label>
                 `;
                 categoryTogglesContainer.insertAdjacentHTML('beforeend', labelHtml);
             });
-
-            function updateDynamicBar() {
-                const activeToggles = Array.from(document.querySelectorAll('.category-toggle:checked'))
-                    .map(cb => cb.value)
-                    .filter(val => Object.keys(categoryColors).includes(val));
-                
-                const colorBar = document.getElementById('left-color-bar');
-                if(!colorBar) return;
-                
-                if (activeToggles.length === 0) {
-                    colorBar.style.background = 'var(--gradient-primary)';
-                    colorBar.style.boxShadow = '2px 0 15px rgba(16, 185, 129, 0.5)';
-                    return;
-                }
-
-                const activeColors = activeToggles.map(cat => categoryColors[cat]);
-                
-                if (activeColors.length === 1) {
-                    colorBar.style.background = activeColors[0];
-                    colorBar.style.boxShadow = `2px 0 15px ${activeColors[0]}80`;
-                } else {
-                    colorBar.style.background = `linear-gradient(to bottom, ${activeColors.join(', ')})`;
-                    colorBar.style.boxShadow = `2px 0 15px ${activeColors[0]}80`; 
-                }
-            }
-
-            updateDynamicBar();
 
             function saveUserPreferences() {
                 let pRadio = document.querySelector('input[name="priority_profile"]:checked');
@@ -676,7 +646,6 @@
                             document.querySelectorAll('.category-toggle').forEach(cb => {
                                 cb.checked = state.categories.includes(cb.value);
                             });
-                            updateDynamicBar();
                         }
                     } catch (e) {
                         console.log("Memory load error, starting fresh.");
@@ -740,11 +709,14 @@
                     </div>
                 ` : '';
 
-                const scoreHTML = tier.benchmark || tier.crashTest ? `
-                    <div style="background: rgba(52, 211, 153, 0.1); border: 1px solid rgba(52, 211, 153, 0.3); color: #34d399; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 12px; display: inline-block;">
-                        ⚡ <strong>Performance Score:</strong> ${tier.benchmark || tier.crashTest}
-                    </div>
-                ` : '';
+                let scoreHTML = '';
+                if (tier.benchmark && catName !== "Monitor") {
+                    scoreHTML = `
+                        <div style="background: rgba(52, 211, 153, 0.1); border: 1px solid rgba(52, 211, 153, 0.3); color: #34d399; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 12px; display: inline-block;">
+                            ⚡ <strong>Performance Score:</strong> ${tier.benchmark}
+                        </div>
+                    `;
+                }
 
                 const displayPrice = tier.price * qty;
 
@@ -934,7 +906,6 @@
 
             categoryTogglesContainer.addEventListener('change', () => {
                 updateSliderBounds();
-                updateDynamicBar(); 
             });
 
             budgetSlider.addEventListener('input', (e) => {
@@ -978,8 +949,7 @@
                 let itemsList = [];
                 const profileWeights = profiles[selectedProfileId].weights;
                 
-                const allowLuxury = activeCategoryNames.includes("Peripherals & Extras");
-                const trueCategories = activeCategoryNames.filter(cat => cat !== "Peripherals & Extras");
+                const trueCategories = activeCategoryNames;
                 
                 let totalWeight = 0;
                 trueCategories.forEach(cat => totalWeight += (profileWeights[cat] || 0));
@@ -1007,11 +977,7 @@
                     });
 
                     items.forEach(item => {
-                        let validTiers = item.tiers;
-                        if (!allowLuxury) {
-                            validTiers = item.tiers.filter(t => t.tier !== "Luxury" && t.tier !== "Enthusiast");
-                        }
-                        itemsList.push({ catName: cat, baseItem: { ...item, tiers: validTiers }, currentTierIdx: 0 });
+                        itemsList.push({ catName: cat, baseItem: { ...item, tiers: item.tiers }, currentTierIdx: 0 });
                     });
                 });
 
