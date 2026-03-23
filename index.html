@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCBudget | Plan Your Build</title>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NK7X1VJ6LJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NK7X1VJ6LJ');
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --surface-glass: rgba(30, 41, 59, 0.4);
+            --surface-solid: rgba(15, 23, 42, 0.6);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --border-highlight: rgba(255, 255, 255, 0.2);
+            --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.4);
+            --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.6);
+            --gradient-primary: linear-gradient(135deg, #4ade80 0%, #3b82f6 100%);
+            --gradient-hover: linear-gradient(135deg, #6ee7b7 0%, #60a5fa 100%);
+            --radius-lg: 32px;
+            --radius-md: 20px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { overflow-x: hidden; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main);
+            background-color: #07090f;
+            background-image: radial-gradient(at 0% 0%, rgba(74, 222, 128, 0.15) 0, transparent 40%), 
+                              radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.1) 0, transparent 40%), 
+                              radial-gradient(at 50% 100%, rgba(139, 92, 246, 0.05) 0, transparent 50%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-left: 20px; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        #left-color-bar {
+            position: fixed;
+            top: 0; left: 0; bottom: 0;
+            width: 4px; 
+            background: var(--gradient-primary);
+            z-index: 200; 
+            box-shadow: 2px 0 15px rgba(74, 222, 128, 0.5); 
+            transition: background 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        nav {
+            padding: 24px 40px; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(15, 23, 42, 0.5); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-glass);
+            position: sticky; top: 0; z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.6rem; font-weight: 800; background: var(--gradient-primary);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            cursor: pointer; transition: transform 0.3s ease; user-select: none;
+        }
+        .logo:hover { transform: scale(1.05); }
+
+        .nav-link {
+            color: var(--text-main); text-decoration: none; font-weight: 600; font-size: 0.95rem;
+            padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border-glass);
+            transition: all 0.2s ease; background: rgba(255,255,255,0.05);
+        }
+        .nav-link:hover { background: rgba(255,255,255,0.1); border-color: var(--border-highlight); transform: translateY(-2px); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; position: relative; flex: 1; width: 100%; }
+
+        .view-section { transition: opacity 0.4s ease, transform 0.4s ease; width: 100%; }
+        .hidden-view { opacity: 0; transform: translateY(20px); pointer-events: none; position: absolute; visibility: hidden; z-index: -1; }
+        .active-view { opacity: 1; transform: translateY(0); pointer-events: all; position: relative; visibility: visible; z-index: 1; }
+
+        #setup-view { text-align: center; }
+        h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.1; letter-spacing: -1.5px; }
+        .subtitle { color: var(--text-muted); font-size: 1.25rem; margin-bottom: 3rem; font-weight: 500; }
+
+        .hero-pill {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-glass);
+            padding: 8px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;
+            color: var(--text-muted); margin-bottom: 25px; cursor: pointer;
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .hero-pill:hover {
+            background: rgba(255, 255, 255, 0.1); color: var(--text-main);
+            border-color: rgba(74, 222, 128, 0.5); transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(74, 222, 128, 0.2);
+        }
+
+        .control-panel {
+            background: var(--surface-glass); backdrop-filter: blur(30px);
+            padding: 50px; border-radius: var(--radius-lg); border: 1px solid var(--border-glass);
+            box-shadow: var(--shadow-soft); max-width: 800px; margin: 0 auto;
+        }
+
+        .category-selector { margin-bottom: 40px; }
+        .category-title-label { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+        
+        .toggles-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        
+        .cat-label {
+            background: rgba(255,255,255,0.05); padding: 12px 24px; border-radius: 30px;
+            cursor: pointer; font-size: 0.95rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease; color: var(--text-muted);
+        }
+        .cat-checkbox { display: none; }
+        .cat-checkbox:checked + .cat-label { background: var(--text-main); color: #0f172a; border-color: var(--text-main); }
+        .cat-checkbox:not(:checked) + .cat-label { opacity: 0.4; text-decoration: line-through; }
+
+        .priority-label {
+            background: rgba(255,255,255,0.05); padding: 12px 24px; border-radius: 30px;
+            cursor: pointer; font-size: 0.95rem; font-weight: 600; border: 2px solid transparent;
+            transition: all 0.3s ease; color: var(--text-muted);
+        }
+        .priority-radio { display: none; }
+        input[value="budget"]:checked + .priority-label { border-color: #cbd5e1; color: #cbd5e1; background: rgba(203, 213, 225, 0.1); box-shadow: 0 10px 20px rgba(203, 213, 225, 0.1); transform: translateY(-2px); }
+        input[value="balanced"]:checked + .priority-label { border-color: #a1c4fd; color: #a1c4fd; background: rgba(161, 196, 253, 0.1); box-shadow: 0 10px 20px rgba(161, 196, 253, 0.1); transform: translateY(-2px); }
+        input[value="safety"]:checked + .priority-label { border-color: #fbd38d; color: #fbd38d; background: rgba(251, 211, 141, 0.1); box-shadow: 0 10px 20px rgba(251, 211, 141, 0.1); transform: translateY(-2px); }
+        input[value="aesthetic"]:checked + .priority-label { border-color: #fbc2eb; color: #fbc2eb; background: rgba(251, 194, 235, 0.1); box-shadow: 0 10px 20px rgba(251, 194, 235, 0.1); transform: translateY(-2px); }
+        input[value="organic"]:checked + .priority-label { border-color: #b6eacb; color: #b6eacb; background: rgba(182, 234, 203, 0.1); box-shadow: 0 10px 20px rgba(182, 234, 203, 0.1); transform: translateY(-2px); }
+
+        .budget-display { font-size: 5rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -2px; }
+        
+        .slider-wrapper { position: relative; margin: 30px 0 40px; width: 100%; }
+        input[type=range] { -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 100%; background: transparent; outline: none; margin: 0; }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 10px; cursor: pointer; background: rgba(255, 255, 255, 0.25); border-radius: 10px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.3); }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 36px; width: 36px; border-radius: 50%; background: var(--gradient-primary); cursor: grab; margin-top: -13px; box-shadow: 0 0 20px rgba(74, 222, 128, 0.5); border: 4px solid #0f172a; transition: transform 0.3s, box-shadow 0.3s; }
+        input[type=range]:active::-webkit-slider-thumb { transform: scale(1.3); cursor: grabbing; box-shadow: 0 0 30px rgba(74, 222, 128, 0.8); }
+        input[type=range]::-moz-range-track { width: 100%; height: 10px; cursor: pointer; background: rgba(255, 255, 255, 0.25); border-radius: 10px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.3); }
+        input[type=range]::-moz-range-thumb { height: 36px; width: 36px; border-radius: 50%; box-sizing: border-box; background: var(--gradient-primary); cursor: grab; border: 4px solid #0f172a; box-shadow: 0 0 20px rgba(74, 222, 128, 0.5); transition: transform 0.3s, box-shadow 0.3s; }
+        input[type=range]:active::-moz-range-thumb { transform: scale(1.3); cursor: grabbing; box-shadow: 0 0 30px rgba(74, 222, 128, 0.8); }
+
+        @keyframes jellyShake {
+            0% { transform: scale(1.3) translateX(0); }
+            25% { transform: scale(1.05) translateX(-4px); }
+            50% { transform: scale(1.1) translateX(4px); }
+            75% { transform: scale(0.95) translateX(-2px); }
+            100% { transform: scale(1) translateX(0); }
+        }
+        input[type=range].shake-effect::-webkit-slider-thumb { animation: jellyShake 0.4s ease-in-out both; }
+        input[type=range].shake-effect::-moz-range-thumb { animation: jellyShake 0.4s ease-in-out both; }
+
+        .primary-btn {
+            background: var(--gradient-primary); color: #0f172a; border: none; padding: 20px 48px;
+            font-size: 1.15rem; font-weight: 800; border-radius: 40px; cursor: pointer;
+            transition: all 0.3s ease; width: 100%; max-width: 360px; box-shadow: 0 10px 30px rgba(74, 222, 128, 0.3);
+            margin: 0 auto; display: block;
+        }
+        .primary-btn:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(74, 222, 128, 0.5); background: var(--gradient-hover); }
+        .primary-btn:disabled { opacity: 0.5; transform: none; box-shadow: none; cursor: not-allowed; }
+
+        .secondary-btn {
+            background: transparent; color: var(--text-main); border: 1px solid var(--border-glass);
+            padding: 12px 28px; border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.2s;
+        }
+        .secondary-btn:hover { background: rgba(255,255,255,0.05); border-color: var(--border-highlight); transform: translateY(-2px); }
+
+        .results-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
+        .header-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        .pie-chart-container {
+            display: flex; align-items: center; gap: 30px; margin-bottom: 50px;
+            background: var(--surface-glass); backdrop-filter: blur(20px);
+            padding: 30px; border-radius: var(--radius-lg); border: 1px solid var(--border-glass); box-shadow: var(--shadow-soft);
+        }
+        .pie-chart { width: 120px; height: 120px; filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.5)); transform: scale(0); animation: popIn 0.6s 0.1s forwards; flex-shrink: 0;}
+        .chart-legend { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 24px; font-weight: 500; width: 100%; }
+        .legend-item { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; opacity: 0; animation: fadeIn 0.4s forwards; }
+        .legend-color { width: 14px; height: 14px; border-radius: 50%; box-shadow: 0 0 10px currentColor; flex-shrink: 0;}
+
+        .category-section { margin-bottom: 60px; }
+        .category-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 1px solid var(--border-glass); padding-bottom: 15px;}
+        .category-title { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.5px; }
+        
+        .category-allocation-wrapper { position: relative; display: inline-block; cursor: help; }
+        .category-allocation { 
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); 
+            padding: 8px 20px; border-radius: 30px; font-weight: 700; font-size: 1.1rem; transition: all 0.2s;
+        }
+        .category-allocation-wrapper:hover .category-allocation { background: rgba(255,255,255,0.1) !important; transform: translateY(-2px); }
+        
+        .subtotal-tooltip {
+            visibility: hidden; width: 340px; background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(40px); text-align: left; padding: 24px; border-radius: 16px; border: 1px solid var(--border-highlight);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8); position: absolute; z-index: 100; bottom: 130%; right: 0;
+            opacity: 0; transform: translateY(10px); transition: all 0.3s; font-size: 0.9rem; font-weight: 500; line-height: 1.6;
+        }
+        .subtotal-tooltip::after { content: ''; position: absolute; top: 100%; right: 0; width: 100%; height: 30%; }
+        .category-allocation-wrapper:hover .subtotal-tooltip { visibility: visible; opacity: 1; transform: translateY(0); }
+
+        .product-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+        .product-card {
+            background: var(--surface-solid); border: 1px solid var(--border-glass); position: relative;
+            border-radius: var(--radius-md); padding: 20px; display: flex; flex-direction: column;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); backdrop-filter: blur(10px);
+            opacity: 0; transform: translateX(60px); transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s, opacity 0.2s;
+        }
+        .product-card:hover { box-shadow: var(--shadow-hover); border-color: var(--border-highlight); transform: translateY(-6px) !important; }
+        
+        .qty-control {
+            position: absolute; top: 15px; left: 15px;
+            background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(10px);
+            border: 1px solid var(--border-highlight); border-radius: 20px;
+            display: flex; align-items: center; gap: 8px;
+            padding: 4px 10px; z-index: 10; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .qty-btn {
+            background: transparent; color: var(--text-main); border: none;
+            cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+            width: 20px; height: 20px; border-radius: 50%; transition: 0.2s;
+        }
+        .qty-btn:hover { background: rgba(255,255,255,0.1); }
+        .qty-display { font-weight: 700; font-size: 0.95rem; min-width: 14px; text-align: center; }
+        
+        .product-card.qty-zero { opacity: 0.5; filter: grayscale(80%); border-color: transparent; }
+        
+        .swap-btn {
+            position: absolute;
+            top: 15px; right: 15px;
+            background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(10px);
+            border: 1px solid var(--border-highlight); color: var(--text-main);
+            border-radius: 50%; width: 36px; height: 36px;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 10;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            font-size: 1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .swap-btn:hover {
+            background: var(--gradient-primary); color: #0f172a;
+            transform: rotate(180deg) scale(1.1); border-color: transparent;
+            box-shadow: 0 6px 15px rgba(74, 222, 128, 0.5);
+        }
+
+        .product-thumb { 
+            height: 200px; width: 100%; border-radius: 12px; background-color: #ffffff; 
+            object-fit: contain; padding: 15px; margin-bottom: 20px; border: 1px solid var(--border-glass); display: block;
+        }
+
+        .tier-badge {
+            display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; 
+            font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;
+            background: rgba(255,255,255,0.1); color: var(--text-muted); width: fit-content;
+        }
+
+        @keyframes slideInRight { to { opacity: 1; transform: translateX(0); } }
+        @keyframes popIn { to { transform: scale(1); } }
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        .product-name { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+        .product-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-glass); padding-top: 15px; margin-top: auto; }
+        .product-price { font-size: 1.4rem; font-weight: 800; }
+        .buy-btn {
+            background: rgba(255,255,255,0.1); color: var(--text-main); text-decoration: none; border: 1px solid var(--border-glass);
+            padding: 8px 18px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; transition: 0.2s; text-align: center;
+        }
+        .buy-btn:hover { background: var(--text-main); color: #0f172a; transform: scale(1.05); }
+
+        .grand-total-card {
+            background: var(--surface-glass); backdrop-filter: blur(30px); padding: 40px; border-radius: var(--radius-lg); border: 1px solid var(--border-highlight);
+            box-shadow: 0 0 40px rgba(74, 222, 128, 0.1); text-align: center; margin-top: 60px;
+            opacity: 0; transform: translateY(30px); animation: slideInRight 0.8s 0.2s forwards;
+        }
+        .gt-label { font-size: 1.1rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .gt-value { font-size: 4.5rem; font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 15px; }
+        .gt-target { font-size: 1rem; color: var(--text-muted); font-weight: 500; }
+        .gt-target span { font-weight: 700; color: var(--text-main); }
+        
+        .over-budget-warning {
+            color: #fb7185; font-weight: 700; font-size: 1.1rem; margin-top: 15px;
+            background: rgba(251, 113, 133, 0.1); border: 1px solid rgba(251, 113, 133, 0.3);
+            padding: 10px 20px; border-radius: 12px; display: inline-block;
+            opacity: 0; transform: translateY(-10px); transition: all 0.3s ease;
+        }
+
+        .engine-disclaimer {
+            text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 40px;
+            padding-top: 20px; border-top: 1px solid var(--border-glass);
+            opacity: 0; animation: fadeIn 1s 0.5s forwards;
+        }
+
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(7, 9, 15, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+        }
+        .modal-overlay.show-modal { opacity: 1; pointer-events: all; }
+        .modal-content {
+            background: var(--surface-glass); border: 1px solid var(--border-highlight);
+            border-radius: var(--radius-lg); padding: 40px; max-width: 450px; width: 90%;
+            text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.8); position: relative;
+            transform: translateY(30px); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .modal-overlay.show-modal .modal-content { transform: translateY(0); }
+        .close-btn {
+            position: absolute; top: 15px; right: 20px; background: transparent; border: none;
+            color: var(--text-muted); font-size: 1.8rem; cursor: pointer; transition: 0.2s;
+        }
+        .close-btn:hover { color: var(--text-main); transform: scale(1.1); }
+        .email-input {
+            width: 100%; padding: 16px 20px; border-radius: 30px; border: 1px solid var(--border-glass);
+            background: rgba(0,0,0,0.4); color: var(--text-main); font-family: inherit;
+            font-size: 1rem; outline: none; transition: 0.3s; text-align: center;
+        }
+        .email-input:focus { border-color: #6ee7b7; box-shadow: 0 0 15px rgba(110, 231, 183, 0.2); }
+        .skip-btn {
+            background: transparent; border: none; color: var(--text-muted); margin-top: 20px;
+            font-size: 0.85rem; cursor: pointer; text-decoration: underline; transition: 0.2s;
+        }
+        .skip-btn:hover { color: var(--text-main); }
+
+        .site-footer { text-align: center; padding: 40px 20px; margin-top: 60px; border-top: 1px solid var(--border-glass); color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+        .site-footer a { color: var(--text-muted); text-decoration: underline; }
+        .site-footer a:hover { color: var(--text-main); }
+        .timestamp-badge { display: inline-block; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 12px; margin-top: 10px; border: 1px solid var(--border-glass); font-weight: 500; }
+        
+        @media print {
+            body, .container, .view-section, #results-content { 
+                display: block !important; 
+                height: auto !important;
+            }
+            body { background: #ffffff !important; color: #000000 !important; background-image: none !important; -webkit-print-color-adjust: exact; padding-bottom: 0 !important; padding-left: 0 !important; }
+            
+            #left-color-bar { display: none !important; }
+            * { filter: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; text-shadow: none !important; }
+            nav, .header-actions, .engine-disclaimer, #setup-view, #email-modal, #about-modal, .site-footer { display: none !important; }
+            .container { padding: 0 !important; max-width: 100% !important; margin: 0 !important; }
+            h2, p { color: #000 !important; }
+            
+            .product-list { display: block !important; }
+            .product-card { 
+                display: inline-block !important; 
+                width: 47% !important;
+                margin: 0 1% 15px 1% !important; 
+                vertical-align: top;
+                background: #fff !important; border: 1px solid #ccc !important; box-shadow: none !important; color: #000 !important; 
+                page-break-inside: avoid !important; break-inside: avoid !important;
+                padding: 15px !important; opacity: 1 !important; transform: none !important; 
+            }
+            
+            .qty-control { display: none !important; }
+            .product-card.qty-zero { display: none !important; }
+            
+            .product-name, .product-price { color: #000 !important; }
+            .tier-badge { background: #f1f5f9 !important; color: #475569 !important; border: 1px solid #cbd5e1; }
+            .swap-btn, .buy-btn { display: none !important; }
+            .category-section { display: block !important; page-break-inside: avoid !important; break-inside: avoid !important; margin-bottom: 30px !important; }
+            .category-header { border-bottom: 2px solid #ccc !important; }
+            .category-title { color: #000 !important; }
+            .category-allocation { background: #f8fafc !important; color: #000 !important; border: 1px solid #ccc !important; }
+            .pie-chart-container { display: none !important; }
+            .grand-total-card { background: #f8fafc !important; border: 2px solid #000 !important; box-shadow: none !important; page-break-inside: avoid !important; }
+            .gt-label, .gt-value, .gt-target, .gt-target span, .over-budget-warning { color: #000 !important; }
+        }
+        @media (max-width: 768px) {
+            body { padding-left: 10px; }
+            #left-color-bar { width: 3px; }
+            nav { padding: 15px 20px; }
+            .container { padding: 30px 15px; }
+            h1 { font-size: 2.2rem; letter-spacing: -0.5px; }
+            .control-panel { padding: 30px 20px; }
+            .budget-display { font-size: 3.5rem; }
+            .results-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .header-actions { width: 100%; justify-content: space-between; }
+            .pie-chart-container { flex-direction: column; padding: 25px 20px; gap: 25px; align-items: center; text-align: left; }
+            .chart-legend { grid-template-columns: 1fr; gap: 12px; }
+            .category-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .category-header > div:last-child { text-align: left !important; width: 100%; }
+            .subtotal-tooltip { width: 100%; min-width: 280px; bottom: 100%; left: 0; right: auto; margin-bottom: 15px; }
+            .subtotal-tooltip::after { display: none; }
+            .grand-total-card { padding: 30px 20px; }
+            .gt-value { font-size: 3rem; }
+            .product-card { transform: translateY(40px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="left-color-bar"></div>
+
+    <nav>
+        <div class="logo" id="logoBtn">PCBudget</div>
+        <a href="/blog" class="nav-link">Blog</a>
+    </nav>
+
+    <div class="container">
+        <div id="setup-view" class="view-section active-view">
+            <div class="hero-pill" id="aboutPillBtn">
+                <span style="opacity: 0.7;">✨</span>
+                <span>How do I use this?</span>
+            </div>
+            <h1>Plan your next PC build.</h1>
+            <p class="subtitle">Set your budget and we'll balance your components to avoid bottlenecks.</p>
+            
+            <div class="control-panel">
+                <div class="category-title-label" style="text-align: center; margin-bottom: 5px;">Your Target Budget</div>
+                <div class="budget-display" id="budgetDisplay">$1,500</div>
+                <div class="slider-wrapper" style="margin-top: 10px; margin-bottom: 50px;">
+                    <input type="range" id="budgetSlider" min="500" max="5000" step="50" value="1500">
+                </div>
+
+                <div class="category-selector" style="margin-bottom: 35px;">
+                    <div class="category-title-label">Build Priority</div>
+                    <div class="toggles-grid" id="profileSelector">
+                        <label><input type="radio" name="priority_profile" value="budget" class="priority-radio"><div class="priority-label">Entry / Office</div></label>
+                        <label><input type="radio" name="priority_profile" value="balanced" class="priority-radio" checked><div class="priority-label">Balanced Gaming</div></label>
+                        <label><input type="radio" name="priority_profile" value="safety" class="priority-radio"><div class="priority-label">Workstation</div></label>
+                        <label><input type="radio" name="priority_profile" value="aesthetic" class="priority-radio"><div class="priority-label">Aesthetic / RGB</div></label>
+                        <label><input type="radio" name="priority_profile" value="organic" class="priority-radio"><div class="priority-label">Enthusiast</div></label>
+                    </div>
+                </div>
+
+                <div class="category-selector" style="margin-bottom: 40px;">
+                    <div class="category-title-label">What components do you need? <span style="text-transform: none; opacity: 0.7; font-weight: 500; letter-spacing: normal;">(Uncheck what you already own)</span></div>
+                    <div class="toggles-grid" id="categoryTogglesContainer"></div>
+                </div>
+
+                <button class="primary-btn" id="buildBtn">Generate My Recommendations</button>
+            </div>
+        </div>
+            
+        <div id="results-view" class="view-section hidden-view">
+            <div class="results-header">
+                <div>
+                    <h2>Your Recommended Build</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 5px;">Curated PC components intelligently balanced for your goals and budget.</p>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="secondary-btn" id="startOverBtn">← Edit Setup</button>
+                    <button class="primary-btn" id="exportPdfBtn" style="margin-top: 0; padding: 12px 28px; width: auto; font-size: 0.95rem; box-shadow: none;">Save as PDF</button>
+                </div>
+            </div>
+
+            <div id="results-content">
+                <div class="pie-chart-container">
+                    <div class="pie-chart" id="pieChartCanvas"></div>
+                    <div class="chart-legend" id="chartLegend"></div>
+                </div>
+                <div id="categories-container"></div>
+                <div id="grand-total-container"></div>
+                
+                <div class="engine-disclaimer">
+                    *This is a smart recommendation engine designed to optimize PC building spending. Items are hand-curated for reliability and value, and intelligently matched to your budget constraints to prevent bottlenecking. Use the swap button (⟳) on any item to view other options.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>PCBudget is a free tool built to help PC builders plan smart, balanced rigs.</p>
+        <p>As an Amazon Associate, we earn from qualifying purchases. This helps keep the engine running.</p>
+        <div class="timestamp-badge" id="liveTimestampBadge">Waiting for live data...</div>
+        <div style="margin-top: 15px;">
+            <a href="/">Calculator</a> &nbsp;|&nbsp; 
+            <a href="/blog">Build Guides</a>
+        </div>
+    </footer>
+
+    <div id="email-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="closeModalBtn" class="close-btn">&times;</button>
+            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Save this list & track price drops.</h3>
+            <p style="color: var(--text-muted); margin-bottom: 25px; line-height: 1.5;">Enter your email to get a copy of this exact parts breakdown, plus alerts if any of your recommended items go on sale.</p>
+            
+            <form id="emailCaptureForm">
+                <input type="email" id="userEmailAddress" placeholder="Your best email address" required class="email-input">
+                <button type="submit" class="primary-btn" style="padding: 15px; margin-top: 15px; font-size: 1rem; width: 100%;">Send My List</button>
+            </form>
+            
+            <button id="skipModalBtn" class="skip-btn">No thanks, I'll just browse</button>
+        </div>
+    </div>
+
+    <div id="about-modal" class="modal-overlay">
+        <div class="modal-content" style="text-align: left; max-width: 500px;">
+            <button id="closeAboutBtn" class="close-btn">&times;</button>
+            <div style="display: inline-block; background: rgba(74, 222, 128, 0.2); color: #6ee7b7; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; border: 1px solid rgba(74, 222, 128, 0.4);">Our Philosophy</div>
+            <h3 style="font-size: 2rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: -1px;">The Perfect Rig.</h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; font-size: 1.05rem;">
+                The PC hardware industry is loud, expensive, and overwhelming. PCBudget is designed to help you navigate from picking a CPU to your first system boot without overspending or creating bottlenecks.
+            </p>
+            <p style="color: var(--text-muted); margin-bottom: 30px; line-height: 1.7; font-size: 1.05rem;">
+                We help you get your parts list in order with the essentials. Our algorithm cuts through the noise to build a balanced rig mapped perfectly to your wallet. Pick your priorities. Exclude components you've already got covered. Then, choose your budget.
+            </p>
+            <button id="gotItBtn" class="primary-btn" style="width: 100%; padding: 16px;">Got it, let's build</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const setupView = document.getElementById('setup-view');
+            const resultsView = document.getElementById('results-view');
+            const budgetSlider = document.getElementById('budgetSlider');
+            const budgetDisplay = document.getElementById('budgetDisplay');
+            const buildBtn = document.getElementById('buildBtn');
+            const startOverBtn = document.getElementById('startOverBtn');
+            const exportPdfBtn = document.getElementById('exportPdfBtn');
+            const logoBtn = document.getElementById('logoBtn');
+            const categoriesContainer = document.getElementById('categories-container');
+            const categoryTogglesContainer = document.getElementById('categoryTogglesContainer');
+            const pieChartCanvas = document.getElementById('pieChartCanvas');
+            const chartLegend = document.getElementById('chartLegend');
+            const grandTotalContainer = document.getElementById('grand-total-container');
+            const timestampBadge = document.getElementById('liveTimestampBadge');
+
+            document.getElementById('closeModalBtn').addEventListener('click', () => document.getElementById('email-modal').classList.remove('show-modal'));
+            document.getElementById('skipModalBtn').addEventListener('click', () => document.getElementById('email-modal').classList.remove('show-modal'));
+
+            document.getElementById('emailCaptureForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = document.getElementById('userEmailAddress').value;
+                
+                fetch("https://formspree.io/f/YOUR_ENDPOINT_ID_HERE", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify({ email: emailInput, request: "Send PC Build List" })
+                }).catch(err => console.log('Replace YOUR_ENDPOINT_ID_HERE with a real Formspree endpoint to actually save.'));
+
+                this.innerHTML = '<h4 style="color: #34d399; margin-top: 20px; font-size: 1.2rem;">Saved! Check your inbox shortly.</h4>';
+                setTimeout(() => document.getElementById('email-modal').classList.remove('show-modal'), 2000);
+            });
+
+            document.getElementById('aboutPillBtn').addEventListener('click', () => document.getElementById('about-modal').classList.add('show-modal'));
+            document.getElementById('closeAboutBtn').addEventListener('click', () => document.getElementById('about-modal').classList.remove('show-modal'));
+            document.getElementById('gotItBtn').addEventListener('click', () => document.getElementById('about-modal').classList.remove('show-modal'));
+
+            const categoryColors = {
+                "CPU & Motherboard": "#bfa2db", 
+                "Graphics Card (GPU)": "#ffb7b2", 
+                "Memory (RAM)": "#a1c4fd", 
+                "Storage (SSD/HDD)": "#fbd38d", 
+                "Power Supply (PSU)": "#b6eacb", 
+                "Cooling": "#ffdac1", 
+                "Case": "#c1c8e4",
+                "Peripherals & Extras": "#d4af37"
+            };
+
+            const profiles = {
+                budget: {
+                    weights: { "CPU & Motherboard": 0.25, "Graphics Card (GPU)": 0.30, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.10, "Cooling": 0.05, "Case": 0.10, "Peripherals & Extras": 0.0 },
+                    desc: "Focuses purely on getting the system running with essential components, minimizing costs on aesthetics and extras."
+                },
+                balanced: {
+                    weights: { "CPU & Motherboard": 0.20, "Graphics Card (GPU)": 0.40, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.08, "Cooling": 0.05, "Case": 0.07, "Peripherals & Extras": 0.0 },
+                    desc: "A well-rounded allocation ensuring no single component bottlenecks the others, maximizing gaming performance per dollar."
+                },
+                safety: {
+                    weights: { "CPU & Motherboard": 0.35, "Graphics Card (GPU)": 0.20, "Memory (RAM)": 0.15, "Storage (SSD/HDD)": 0.15, "Power Supply (PSU)": 0.08, "Cooling": 0.07, "Case": 0.00, "Peripherals & Extras": 0.0 },
+                    desc: "Prioritizes processing power, fast storage, and memory for productivity, rendering, and heavy multi-tasking."
+                },
+                aesthetic: {
+                    weights: { "CPU & Motherboard": 0.15, "Graphics Card (GPU)": 0.35, "Memory (RAM)": 0.10, "Storage (SSD/HDD)": 0.10, "Power Supply (PSU)": 0.08, "Cooling": 0.10, "Case": 0.12, "Peripherals & Extras": 0.0 },
+                    desc: "Maximized budget for high-quality cases, RGB lighting, liquid cooling, and design-forward components."
+                },
+                organic: {
+                    weights: { "CPU & Motherboard": 0.25, "Graphics Card (GPU)": 0.40, "Memory (RAM)": 0.08, "Storage (SSD/HDD)": 0.08, "Power Supply (PSU)": 0.10, "Cooling": 0.09, "Case": 0.00, "Peripherals & Extras": 0.0 },
+                    desc: "Heavily weighted towards premium cooling, high-end power delivery, and top-tier parts for overclocking and maximum fidelity."
+                }
+            };
+
+            let productDatabase = {};
+            
+            let currentLiveKit = {
+                targetBudget: 0, grandTotal: 0, catTotals: {}, kitByCategory: {}, targetBudgets: {}, selectedProfileId: ""
+            };
+
+            Object.keys(categoryColors).forEach(cat => {
+                const isChecked = cat === "Peripherals & Extras" ? "" : "checked";
+                
+                const labelHtml = `
+                    <label>
+                        <input type="checkbox" value="${cat}" class="cat-checkbox category-toggle" ${isChecked}>
+                        <div class="cat-label">${cat}</div>
+                    </label>
+                `;
+                categoryTogglesContainer.insertAdjacentHTML('beforeend', labelHtml);
+            });
+
+            function updateDynamicBar() {
+                const activeToggles = Array.from(document.querySelectorAll('.category-toggle:checked'))
+                    .map(cb => cb.value)
+                    .filter(val => Object.keys(categoryColors).includes(val));
+                
+                const colorBar = document.getElementById('left-color-bar');
+                if(!colorBar) return;
+                
+                if (activeToggles.length === 0) {
+                    colorBar.style.background = 'var(--gradient-primary)';
+                    colorBar.style.boxShadow = '2px 0 15px rgba(74, 222, 128, 0.5)';
+                    return;
+                }
+
+                const activeColors = activeToggles.map(cat => categoryColors[cat]);
+                
+                if (activeColors.length === 1) {
+                    colorBar.style.background = activeColors[0];
+                    colorBar.style.boxShadow = `2px 0 15px ${activeColors[0]}80`;
+                } else {
+                    colorBar.style.background = `linear-gradient(to bottom, ${activeColors.join(', ')})`;
+                    colorBar.style.boxShadow = `2px 0 15px ${activeColors[0]}80`; 
+                }
+            }
+
+            updateDynamicBar();
+
+            function saveUserPreferences() {
+                const state = {
+                    budget: budgetSlider.value,
+                    profile: document.querySelector('input[name="priority_profile"]:checked').value,
+                    categories: Array.from(document.querySelectorAll('.category-toggle:checked')).map(cb => cb.value)
+                };
+                localStorage.setItem('pcBudgetState', JSON.stringify(state));
+            }
+
+            function loadUserPreferences() {
+                const saved = localStorage.getItem('pcBudgetState');
+                if (saved) {
+                    try {
+                        const state = JSON.parse(saved);
+                        if(state.budget) {
+                            budgetSlider.value = state.budget;
+                            budgetDisplay.textContent = '$' + parseInt(state.budget).toLocaleString();
+                        }
+                        if(state.profile) {
+                            const p = document.querySelector(`input[name="priority_profile"][value="${state.profile}"]`);
+                            if(p) p.checked = true;
+                        }
+                        if(state.categories) {
+                            document.querySelectorAll('.category-toggle').forEach(cb => {
+                                cb.checked = state.categories.includes(cb.value);
+                            });
+                            updateDynamicBar();
+                        }
+                    } catch (e) {
+                        console.log("Memory load error, starting fresh.");
+                    }
+                }
+            }
+
+            document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
+                input.addEventListener('change', saveUserPreferences);
+            });
+            budgetSlider.addEventListener('change', saveUserPreferences); 
+
+            buildBtn.disabled = true;
+            buildBtn.textContent = "Loading live prices...";
+
+            loadUserPreferences();
+
+            fetch('products.json')
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    return response.json();
+                })
+                .then(data => {
+                    if(data._metadata && data._metadata.last_updated) {
+                        timestampBadge.textContent = `Prices last verified: ${data._metadata.last_updated}`;
+                        delete data._metadata;
+                    } else {
+                        timestampBadge.style.display = 'none';
+                    }
+
+                    productDatabase = data;
+                    buildBtn.textContent = "Generate My Recommendations";
+                    updateSliderBounds();
+                })
+                .catch(error => {
+                    console.error('Error loading product data:', error);
+                    buildBtn.textContent = "Data syncing. Try again in a few minutes.";
+                });
+
+            function getCategoryExplanation(catName, profileId) {
+                const weight = profiles[profileId].weights[catName] || 0;
+                if (weight >= 0.20) return "Heavily prioritized in your selected profile to align with your core goals.";
+                if (weight <= 0.10) return "Minimized in your selected profile to free up funds for your top priorities.";
+                return "Maintained at a standard allocation to keep your rig balanced.";
+            }
+
+            function getCardInnerHtml(itemState, catName, itemIndex) {
+                const tier = itemState.tiers[itemState.selectedIdx];
+                const qty = itemState.quantity;
+                const directLink = tier.link || "#"; 
+                let imgSrc = tier.img; 
+
+                const starsHTML = tier.rating ? `
+                    <div style="color: #fbbf24; font-size: 0.9rem; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                        <span>★</span> 
+                        <span style="color: var(--text-main); font-weight: 700;">${tier.rating}</span> 
+                        <span style="color: var(--text-muted); font-size: 0.8rem;">(${tier.reviews.toLocaleString()})</span>
+                    </div>
+                ` : '';
+
+                const scoreHTML = tier.benchmark || tier.crashTest ? `
+                    <div style="background: rgba(52, 211, 153, 0.1); border: 1px solid rgba(52, 211, 153, 0.3); color: #34d399; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 12px; display: inline-block;">
+                        ⚡ <strong>Performance Score:</strong> ${tier.benchmark || tier.crashTest}
+                    </div>
+                ` : '';
+
+                const displayPrice = tier.price * qty;
+
+                return `
+                    <div class="qty-control">
+                        <button class="qty-btn qty-minus" data-cat="${catName}" data-index="${itemIndex}">-</button>
+                        <span class="qty-display">${qty}</span>
+                        <button class="qty-btn qty-plus" data-cat="${catName}" data-index="${itemIndex}">+</button>
+                    </div>
+                    <button class="swap-btn" data-cat="${catName}" data-index="${itemIndex}" title="Swap with next tier">⟳</button>
+                    <img src="${imgSrc}" alt="" class="product-thumb" 
+                         onload="if(this.naturalWidth <= 1 && !this.src.includes('dummyimage')) this.src='https://dummyimage.com/400x300/1e293b/f8fafc.png&text=Image+Unavailable';"
+                         onerror="this.onerror=null;this.src='https://dummyimage.com/400x300/1e293b/f8fafc.png&text=Image+Unavailable';">
+                    <div>
+                        <span class="tier-badge">${tier.tier} Choice</span>
+                    </div>
+                    <div class="product-name">${tier.title}</div>
+                    ${starsHTML}
+                    ${scoreHTML}
+                    <div class="product-footer">
+                        <div class="product-price"><span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">est.</span> $${displayPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                        <a href="${directLink}" target="_blank" class="buy-btn">View on Amazon</a>
+                    </div>
+                `;
+            }
+
+            function generateKitListHTML(activeCategoryNames) {
+                categoriesContainer.innerHTML = ''; 
+                grandTotalContainer.innerHTML = ''; 
+                let globalItemIndex = 0; 
+
+                activeCategoryNames.forEach((catName) => {
+                    const items = currentLiveKit.kitByCategory[catName];
+                    const catTotal = currentLiveKit.catTotals[catName];
+                    const color = categoryColors[catName];
+                    const safeCatId = catName.replace(/[^a-zA-Z0-9]/g, '');
+                    let itemsHTML = '';
+
+                    items.forEach((itemState, itemIndex) => {
+                        const cardDelay = 0.2 + (globalItemIndex * 0.08);
+
+                        itemsHTML += `
+                            <div class="product-card" id="card-${safeCatId}-${itemIndex}" style="animation: slideInRight 0.6s ${cardDelay}s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
+                                ${getCardInnerHtml(itemState, catName, itemIndex)}
+                            </div>
+                        `;
+                        globalItemIndex++;
+                    }); 
+
+                    const catExplanation = getCategoryExplanation(catName, currentLiveKit.selectedProfileId);
+                    
+                    categoriesContainer.insertAdjacentHTML('beforeend', `
+                        <div class="category-section">
+                            <div class="category-header">
+                                <div class="category-title" style="color: ${color}; text-shadow: 0 0 20px ${color}40;">${catName}</div>
+                                <div style="text-align: right;">
+                                    <div class="category-allocation-wrapper">
+                                        <div class="category-allocation" id="subtotal-${safeCatId}" style="color: ${color}; border-color: ${color}50; background: ${color}15;">
+                                            Subtotal: $${catTotal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                                        </div>
+                                        <div class="subtotal-tooltip">
+                                            <strong style="color: ${color}; display: block; margin-bottom: 8px; font-size: 1rem;">${catName} utilizes <span id="fraction-text-${safeCatId}">${((catTotal / currentLiveKit.grandTotal) * 100).toFixed(0)}</span>% of your actual spend.</strong>
+                                            <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 12px;">Engine Target: $${currentLiveKit.targetBudgets[catName].toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0})}</span>
+                                            ${catExplanation}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-list">
+                                ${itemsHTML}
+                            </div>
+                        </div>
+                    `);
+                }); 
+
+                const overrideNoteHTML = currentLiveKit.hadToOverride 
+                    ? `<div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px; padding: 10px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass);"><strong>Compatibility First:</strong> The minimum viable component requirements exceeded your target limits. We automatically upgraded your list to the lowest-priced compatible options available.</div>` 
+                    : '';
+
+                let warningStyle = "opacity: 0; transform: translateY(-10px); display: none;";
+                let warningText = "";
+                if (currentLiveKit.grandTotal > currentLiveKit.targetBudget) {
+                    warningStyle = "opacity: 1; transform: translateY(0); display: inline-block;";
+                    warningText = `⚠️ $${(currentLiveKit.grandTotal - currentLiveKit.targetBudget).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} over budget limit`;
+                }
+
+                grandTotalContainer.innerHTML = `
+                    <div class="grand-total-card">
+                        <div class="gt-label">Actual Build Cost</div>
+                        <div class="gt-value" id="animatedTotal">$0.00</div>
+                        <div class="gt-target">Based on your target budget of <span>$${currentLiveKit.targetBudget.toLocaleString()}</span></div>
+                        <div id="overBudgetWarning" class="over-budget-warning" style="${warningStyle}">${warningText}</div>
+                        <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.9rem;">Optimized using the <strong>${document.querySelector('input[name="priority_profile"]:checked').nextElementSibling.innerText}</strong> profile.</p>
+                        ${overrideNoteHTML}
+                    </div>
+                `;
+
+                setTimeout(() => {
+                    const animatedTotalEl = document.getElementById('animatedTotal');
+                    if(animatedTotalEl) animateValue(animatedTotalEl, 0, currentLiveKit.grandTotal, 1500);
+                }, 400);
+            }
+
+            function updateGrandTotalDOM() {
+                const gtEl = document.getElementById('animatedTotal');
+                if (gtEl) gtEl.innerHTML = `$${currentLiveKit.grandTotal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+
+                const warningEl = document.getElementById('overBudgetWarning');
+                if (warningEl) {
+                    if (currentLiveKit.grandTotal > currentLiveKit.targetBudget) {
+                        const diff = currentLiveKit.grandTotal - currentLiveKit.targetBudget;
+                        warningEl.innerHTML = `⚠️ $${diff.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} over budget limit`;
+                        warningEl.style.display = "inline-block";
+                        
+                        setTimeout(() => {
+                            warningEl.style.opacity = 1;
+                            warningEl.style.transform = "translateY(0)";
+                        }, 10);
+                    } else {
+                        warningEl.style.opacity = 0;
+                        warningEl.style.transform = "translateY(-10px)";
+                        setTimeout(() => {
+                            if (currentLiveKit.grandTotal <= currentLiveKit.targetBudget) {
+                                warningEl.style.display = "none";
+                            }
+                        }, 300);
+                    }
+                }
+            }
+
+            function updateSliderBounds() {
+                let minFloor = 0;
+                let activeCount = 0;
+
+                document.querySelectorAll('.category-toggle:checked').forEach(cb => {
+                    if (Object.keys(categoryColors).includes(cb.value)) {
+                        activeCount++;
+                        const items = productDatabase[cb.value] || [];
+                        items.forEach(item => {
+                            if (item.tiers && item.tiers.length > 0) {
+                                minFloor += item.tiers[0].price;
+                            }
+                        });
+                    }
+                });
+
+                if (activeCount === 0 || Object.keys(productDatabase).length === 0) {
+                    buildBtn.disabled = true;
+                    return;
+                }
+                
+                buildBtn.disabled = false;
+
+                const newMin = Math.max(100, Math.floor(minFloor / 50) * 50);
+                const newMax = 7500;
+
+                budgetSlider.min = newMin;
+                budgetSlider.max = newMax;
+
+                let currentVal = parseInt(budgetSlider.value);
+                if (currentVal < newMin) budgetSlider.value = newMin;
+                if (currentVal > newMax) budgetSlider.value = newMax;
+
+                budgetDisplay.textContent = '$' + parseInt(budgetSlider.value).toLocaleString();
+            }
+
+            categoryTogglesContainer.addEventListener('change', () => {
+                updateSliderBounds();
+                updateDynamicBar(); 
+            });
+
+            budgetSlider.addEventListener('input', (e) => {
+                budgetDisplay.textContent = '$' + parseInt(e.target.value).toLocaleString();
+            });
+
+            budgetSlider.addEventListener('mouseup', triggerShake);
+            budgetSlider.addEventListener('touchend', triggerShake);
+
+            function triggerShake() {
+                budgetSlider.classList.remove('shake-effect');
+                void budgetSlider.offsetWidth; 
+                budgetSlider.classList.add('shake-effect');
+            }
+
+            function goToResults() {
+                setupView.classList.remove('active-view');
+                setupView.classList.add('hidden-view');
+                setTimeout(() => {
+                    resultsView.classList.remove('hidden-view');
+                    resultsView.classList.add('active-view');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 300);
+            }
+
+            function goToSetup() {
+                resultsView.classList.remove('active-view');
+                resultsView.classList.add('hidden-view');
+                setTimeout(() => {
+                    setupView.classList.remove('hidden-view');
+                    setupView.classList.add('active-view');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 300);
+            }
+
+            startOverBtn.addEventListener('click', goToSetup);
+            logoBtn.addEventListener('click', goToSetup);
+            exportPdfBtn.addEventListener('click', () => { window.print(); });
+
+            function calculateOptimalKit(totalBudget, activeCategoryNames, selectedProfileId) {
+                let itemsList = [];
+                const profileWeights = profiles[selectedProfileId].weights;
+                
+                const allowLuxury = activeCategoryNames.includes("Peripherals & Extras");
+                const trueCategories = activeCategoryNames.filter(cat => cat !== "Peripherals & Extras");
+                
+                let totalWeight = 0;
+                trueCategories.forEach(cat => totalWeight += (profileWeights[cat] || 0));
+                
+                let targetBudgets = {};
+                trueCategories.forEach(cat => {
+                    targetBudgets[cat] = ((profileWeights[cat] || 0) / totalWeight) * totalBudget;
+                    const items = productDatabase[cat] || [];
+                    
+                    items.forEach(item => {
+                        let validTiers = item.tiers;
+                        if (!allowLuxury) {
+                            validTiers = item.tiers.filter(t => t.tier !== "Luxury" && t.tier !== "Enthusiast");
+                        }
+                        itemsList.push({ catName: cat, baseItem: { ...item, tiers: validTiers }, currentTierIdx: 0 });
+                    });
+                });
+
+                let hadToOverride = itemsList.reduce((sum, i) => sum + i.baseItem.tiers[0].price, 0) > totalBudget;
+
+                let canUpgradePhase1 = true;
+                while(canUpgradePhase1) {
+                    canUpgradePhase1 = false;
+                    
+                    let currentGlobalTotal = itemsList.reduce((sum, i) => sum + i.baseItem.tiers[i.currentTierIdx].price, 0);
+
+                    trueCategories.forEach(cat => {
+                        let catItems = itemsList.filter(i => i.catName === cat);
+                        let currentCatTotal = catItems.reduce((sum, i) => sum + i.baseItem.tiers[i.currentTierIdx].price, 0);
+                        
+                        let candidates = catItems.filter(i => {
+                            if (i.currentTierIdx >= i.baseItem.tiers.length - 1) return false;
+                            let costToUpgrade = i.baseItem.tiers[i.currentTierIdx + 1].price - i.baseItem.tiers[i.currentTierIdx].price;
+                            
+                            let localOk = (currentCatTotal + costToUpgrade) <= targetBudgets[cat];
+                            let globalOk = (currentGlobalTotal + costToUpgrade) <= totalBudget;
+                            
+                            return localOk && globalOk;
+                        });
+
+                        if (candidates.length > 0) {
+                            candidates.sort((a,b) => (a.baseItem.tiers[a.currentTierIdx + 1].price - a.baseItem.tiers[a.currentTierIdx].price) - (b.baseItem.tiers[b.currentTierIdx + 1].price - b.baseItem.tiers[b.currentTierIdx].price));
+                            
+                            let costToUpgrade = candidates[0].baseItem.tiers[candidates[0].currentTierIdx + 1].price - candidates[0].baseItem.tiers[candidates[0].currentTierIdx].price;
+                            
+                            candidates[0].currentTierIdx++;
+                            currentGlobalTotal += costToUpgrade;
+                            canUpgradePhase1 = true; 
+                        }
+                    });
+                }
+
+                let currentGlobalTotal = itemsList.reduce((sum, i) => sum + i.baseItem.tiers[i.currentTierIdx].price, 0);
+                let canUpgradePhase2 = true;
+                
+                while (canUpgradePhase2 && currentGlobalTotal < totalBudget) {
+                    let candidates = itemsList.filter(i => {
+                        if (i.currentTierIdx >= i.baseItem.tiers.length - 1) return false;
+                        let costToUpgrade = i.baseItem.tiers[i.currentTierIdx + 1].price - i.baseItem.tiers[i.currentTierIdx].price;
+                        return (currentGlobalTotal + costToUpgrade) <= totalBudget;
+                    });
+
+                    if (candidates.length === 0) {
+                        canUpgradePhase2 = false;
+                    } else {
+                        candidates.sort((a, b) => {
+                            let weightA = (profileWeights[a.catName] || 0) / totalWeight;
+                            let weightB = (profileWeights[b.catName] || 0) / totalWeight;
+                            if (weightB !== weightA) return weightB - weightA; 
+                            
+                            let costA = a.baseItem.tiers[a.currentTierIdx + 1].price - a.baseItem.tiers[a.currentTierIdx].price;
+                            let costB = b.baseItem.tiers[b.currentTierIdx + 1].price - b.baseItem.tiers[b.currentTierIdx].price;
+                            return costA - costB;
+                        });
+
+                        let costToUpgrade = candidates[0].baseItem.tiers[candidates[0].currentTierIdx + 1].price - candidates[0].baseItem.tiers[candidates[0].currentTierIdx].price;
+                        candidates[0].currentTierIdx++;
+                        currentGlobalTotal += costToUpgrade;
+                    }
+                }
+
+                let kitByCategory = {};
+                let catTotals = {};
+                trueCategories.forEach(cat => { kitByCategory[cat] = []; catTotals[cat] = 0; });
+
+                itemsList.forEach(i => {
+                    kitByCategory[i.catName].push({
+                        name: i.baseItem.name,
+                        tiers: i.baseItem.tiers,
+                        selectedIdx: i.currentTierIdx,
+                        quantity: 1
+                    });
+                    catTotals[i.catName] += i.baseItem.tiers[i.currentTierIdx].price;
+                });
+
+                return { kitByCategory, catTotals, grandTotal: currentGlobalTotal, hadToOverride, targetBudgets, trueCategories };
+            }
+
+            buildBtn.addEventListener('click', () => {
+                if(buildBtn.disabled) return;
+
+                const totalBudget = parseInt(budgetSlider.value);
+                
+                const fudgeFactor = Math.floor(Math.random() * 41) + 80;
+                const algorithmBudget = Math.max(100, totalBudget - fudgeFactor);
+
+                const activeCategoryNames = Array.from(document.querySelectorAll('.category-toggle:checked'))
+                    .map(cb => cb.value)
+                    .filter(val => Object.keys(categoryColors).includes(val)); 
+                const selectedProfileId = document.querySelector('input[name="priority_profile"]:checked').value;
+                
+                goToResults();
+                const finalKit = calculateOptimalKit(algorithmBudget, activeCategoryNames, selectedProfileId);
+                
+                currentLiveKit = {
+                    targetBudget: totalBudget,
+                    grandTotal: finalKit.grandTotal,
+                    catTotals: finalKit.catTotals,
+                    kitByCategory: finalKit.kitByCategory,
+                    hadToOverride: finalKit.hadToOverride,
+                    targetBudgets: finalKit.targetBudgets,
+                    selectedProfileId: selectedProfileId
+                };
+                
+                renderDonutChart(currentLiveKit.catTotals, finalKit.trueCategories);
+                generateKitListHTML(finalKit.trueCategories);
+            });
+            
+            let modalHasBeenShown = false;
+            document.getElementById('categories-container').addEventListener('click', function(e) {
+                if (e.target.classList.contains('buy-btn') && !modalHasBeenShown) {
+                    document.getElementById('email-modal').classList.add('show-modal');
+                    modalHasBeenShown = true;
+                }
+                
+                const minusBtn = e.target.closest('.qty-minus');
+                const plusBtn = e.target.closest('.qty-plus');
+                
+                if (minusBtn || plusBtn) {
+                    const btn = minusBtn || plusBtn;
+                    const catName = btn.dataset.cat;
+                    const itemIndex = parseInt(btn.dataset.index);
+                    const itemState = currentLiveKit.kitByCategory[catName][itemIndex];
+                    const currentTier = itemState.tiers[itemState.selectedIdx];
+                    
+                    let oldQty = itemState.quantity;
+                    let newQty = oldQty;
+
+                    if (plusBtn) newQty++;
+                    if (minusBtn && oldQty > 0) newQty--;
+
+                    if (oldQty !== newQty) {
+                        itemState.quantity = newQty;
+                        const priceDiff = (newQty - oldQty) * currentTier.price;
+                        
+                        currentLiveKit.catTotals[catName] += priceDiff;
+                        currentLiveKit.grandTotal += priceDiff;
+
+                        const safeCatId = catName.replace(/[^a-zA-Z0-9]/g, '');
+                        const cardEl = document.getElementById(`card-${safeCatId}-${itemIndex}`);
+                        
+                        if (cardEl) {
+                            cardEl.innerHTML = getCardInnerHtml(itemState, catName, itemIndex);
+                            if (newQty === 0) cardEl.classList.add('qty-zero');
+                            else cardEl.classList.remove('qty-zero');
+                        }
+
+                        const subtotalEl = document.getElementById(`subtotal-${safeCatId}`);
+                        if (subtotalEl) subtotalEl.textContent = `Subtotal: $${currentLiveKit.catTotals[catName].toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+
+                        Object.keys(currentLiveKit.catTotals).forEach(c => {
+                            const sId = c.replace(/[^a-zA-Z0-9]/g, '');
+                            const fracEl = document.getElementById(`fraction-text-${sId}`);
+                            if (fracEl) fracEl.textContent = currentLiveKit.grandTotal > 0 ? ((currentLiveKit.catTotals[c] / currentLiveKit.grandTotal) * 100).toFixed(0) : 0;
+                        });
+
+                        updateGrandTotalDOM();
+                        renderDonutChart(currentLiveKit.catTotals, Object.keys(currentLiveKit.catTotals));
+                    }
+                    return;
+                }
+
+                const swapBtn = e.target.closest('.swap-btn');
+                if (swapBtn) {
+                    const catName = swapBtn.dataset.cat;
+                    const itemIndex = parseInt(swapBtn.dataset.index);
+                    
+                    const itemState = currentLiveKit.kitByCategory[catName][itemIndex];
+                    const oldTier = itemState.tiers[itemState.selectedIdx];
+                    
+                    itemState.selectedIdx = (itemState.selectedIdx + 1) % itemState.tiers.length;
+                    const newTier = itemState.tiers[itemState.selectedIdx];
+
+                    const priceDiff = (newTier.price - oldTier.price) * itemState.quantity;
+                    currentLiveKit.catTotals[catName] += priceDiff;
+                    currentLiveKit.grandTotal += priceDiff;
+
+                    const safeCatId = catName.replace(/[^a-zA-Z0-9]/g, '');
+                    const cardEl = document.getElementById(`card-${safeCatId}-${itemIndex}`);
+                    if (cardEl) {
+                        cardEl.style.opacity = "0";
+                        
+                        setTimeout(() => {
+                            cardEl.innerHTML = getCardInnerHtml(itemState, catName, itemIndex);
+                            
+                            cardEl.style.transform = "scale(0.98)";
+                            cardEl.style.opacity = "1"; 
+                            setTimeout(() => cardEl.style.transform = "scale(1)", 150);
+                            
+                        }, 200);
+                    }
+
+                    const subtotalEl = document.getElementById(`subtotal-${safeCatId}`);
+                    if (subtotalEl) subtotalEl.textContent = `Subtotal: $${currentLiveKit.catTotals[catName].toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+
+                    Object.keys(currentLiveKit.catTotals).forEach(c => {
+                        const sId = c.replace(/[^a-zA-Z0-9]/g, '');
+                        const fracEl = document.getElementById(`fraction-text-${sId}`);
+                        if (fracEl) fracEl.textContent = currentLiveKit.grandTotal > 0 ? ((currentLiveKit.catTotals[c] / currentLiveKit.grandTotal) * 100).toFixed(0) : 0;
+                    });
+
+                    updateGrandTotalDOM();
+                    renderDonutChart(currentLiveKit.catTotals, Object.keys(currentLiveKit.catTotals));
+                }
+            });
+
+            function renderDonutChart(catTotals, activeCategoryNames) {
+                pieChartCanvas.innerHTML = ''; 
+                chartLegend.innerHTML = ''; 
+
+                let currentAngle = 0;
+                const radius = 40;
+                let svgHtml = `<svg width="100%" height="100%" viewBox="0 0 80 80">`;
+                
+                let grandTotal = Object.values(catTotals).reduce((a, b) => a + b, 0);
+
+                activeCategoryNames.forEach((catName, index) => {
+                    let color = categoryColors[catName];
+                    let weight = catTotals[catName] / grandTotal;
+                    if (weight === 0) return;
+
+                    const sliceAngle = weight * 360;
+                    const largeArcFlag = sliceAngle > 180 ? 1 : 0;
+                    const gap = 1; 
+                    const startRads = (currentAngle + gap - 90) * (Math.PI / 180);
+                    const endRads = (currentAngle + sliceAngle - gap - 90) * (Math.PI / 180);
+
+                    const startX = 40 + radius * Math.cos(startRads);
+                    const startY = 40 + radius * Math.sin(startRads);
+                    const endX = 40 + radius * Math.cos(endRads);
+                    const endY = 40 + radius * Math.sin(endRads);
+
+                    svgHtml += `<path d="M40,40 L${startX},${startY} A${radius},${radius} 0 ${largeArcFlag},1 ${endX},${endY} Z" fill="${color}" style="transition: all 0.4s ease;" />`;
+
+                    chartLegend.insertAdjacentHTML('beforeend', `
+                        <div class="legend-item" style="animation-delay: ${0.2 + (index * 0.1)}s;">
+                            <div class="legend-color" style="background-color: ${color}; box-shadow: 0 0 8px ${color};"></div>
+                            <span>${catName}</span>
+                        </div>
+                    `);
+                    currentAngle += sliceAngle;
+                });
+
+                svgHtml += `<circle cx="40" cy="40" r="24" fill="#141a28" /></svg>`;
+                pieChartCanvas.insertAdjacentHTML('beforeend', svgHtml);
+            }
+
+            function animateValue(obj, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const currentVal = (progress * (end - start) + start);
+                    obj.innerHTML = `$${currentVal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                    if (progress < 1) window.requestAnimationFrame(step);
+                    else obj.innerHTML = `$${end.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                };
+                window.requestAnimationFrame(step);
+            }
+        });
+    </script>
+</body>
+</html>
