@@ -11,102 +11,105 @@ AFFILIATE_TAG = "1097fa-20"
 input_catalog = {
     "CPU & Motherboard": {
         "Processor (Intel)": {
-            "Budget": "https://www.amazon.com/dp/B09NPJX7PV/?tag=1097fa-20",      # i3-12100F
-            "Standard": "https://www.amazon.com/dp/B09FX4D72T/?tag=1097fa-20",    # i5-13400F
-            "Premium": "https://www.amazon.com/dp/B0CGJC178L/?tag=1097fa-20",     # i7-14700K
-            "Enthusiast": "https://www.amazon.com/dp/B0CGJDKLB8/?tag=1097fa-20"   # i9-14900K
+            "Tier 1": "https://www.amazon.com/dp/B09NPJX7PV/?tag=1097fa-20 #i3-12100F",
+            "Tier 2": "https://www.amazon.com/dp/B0BQ6BRL4T/?tag=1097fa-20 #i5-13400F",
+            "Tier 3": "https://www.amazon.com/dp/B0BCDR9M33/?tag=1097fa-20 #i5-13600K",
+            "Tier 4": "https://www.amazon.com/dp/B0CGJC178L/?tag=1097fa-20 #i7-14700K",
+            "Tier 5": "https://www.amazon.com/dp/B09RWL74GY/?tag=1097fa-20 #i9-14900K",
+            "Tier 6": "https://www.amazon.com/dp/B0BCF54SR1/?tag=1097fa-20 #i9-14900KS"
         },
         "Processor (AMD)": {
-            "Budget": "https://www.amazon.com/dp/B09VCJ171S/?tag=1097fa-20",      # Ryzen 5 5600
-            "Standard": "https://www.amazon.com/dp/B0BMQJWBDM/?tag=1097fa-20",    # Ryzen 5 7600
-            "Premium": "https://www.amazon.com/dp/B0BTZB7F88/?tag=1097fa-20",     # Ryzen 7 7800X3D
-            "Enthusiast": "https://www.amazon.com/dp/B0BTRH9MNS/?tag=1097fa-20"   # Ryzen 9 7950X3D
+            "Tier 1": "https://www.amazon.com/dp/B08166SLDF/?tag=1097fa-20 #Ryzen-5-5600",
+            "Tier 2": "https://www.amazon.com/dp/B0BMQJWBDM/?tag=1097fa-20 #Ryzen-5-7600",
+            "Tier 3": "https://www.amazon.com/dp/B0BBJDS62N/?tag=1097fa-20 #Ryzen-5-7600X",
+            "Tier 4": "https://www.amazon.com/dp/B0DKFMSMYK/?tag=1097fa-20 #Ryzen-7-7800X3D",
+            "Tier 5": "https://www.amazon.com/dp/B0BTRH9MNS/?tag=1097fa-20 #Ryzen-9-7950X3D",
+            "Tier 6": "https://www.amazon.com/dp/B0DVZSG8D5/?tag=1097fa-20 #Ryzen-9-7950X3D-Alt"
         },
         "Motherboard (Intel DDR4)": {
-            "Budget": "https://www.amazon.com/dp/B09PX326Q8/?tag=1097fa-20",      # H610/B660M
-            "Standard": "https://www.amazon.com/dp/B09PX326Q8/?tag=1097fa-20",    # B760 DDR4
-            "Premium": "https://www.amazon.com/dp/B0BZ9T4KF6/?tag=1097fa-20",     # Z690 DDR4
-            "Enthusiast": "https://www.amazon.com/dp/B0BZ9T4KF6/?tag=1097fa-20"   # Z790 DDR4
+            "Tier 1": "https://www.amazon.com/dp/B0BSB6MB15/?tag=1097fa-20 #B660M-DDR4",
+            "Tier 2": "https://www.amazon.com/dp/B0BZ9T4KF6/?tag=1097fa-20 #B760-DDR4",
+            "Tier 3": "https://www.amazon.com/dp/B0BH9DXY38/?tag=1097fa-20 #Z790-DDR4"
         },
         "Motherboard (Intel DDR5)": {
-            "Budget": "https://www.amazon.com/dp/B0C15THTK7/?tag=1097fa-20",      # B760M DDR5
-            "Standard": "https://www.amazon.com/dp/B0C15THTK7/?tag=1097fa-20",    # B760 ATX DDR5
-            "Premium": "https://www.amazon.com/dp/B0BH9DXY38/?tag=1097fa-20",     # Z790 DDR5
-            "Enthusiast": "https://www.amazon.com/dp/B0CTTVFWHM/?tag=1097fa-20"   # Z790 High-End DDR5
+            "Tier 1": "https://www.amazon.com/dp/B0BZTB5LKJ/?tag=1097fa-20 #B760M-DDR5",
+            "Tier 2": "https://www.amazon.com/dp/B0BH9DXY38/?tag=1097fa-20 #Z790-DDR5-Entry",
+            "Tier 3": "https://www.amazon.com/dp/B0BQD58D96/?tag=1097fa-20 #Z790-DDR5-Premium"
         },
         "Motherboard (AMD DDR4)": {
-            "Budget": "https://www.amazon.com/dp/B07MWGKHR9/?tag=1097fa-20",      # B450M / A520M
-            "Standard": "https://www.amazon.com/dp/B09K4QMPL9/?tag=1097fa-20",    # B550 ATX
-            "Premium": "https://www.amazon.com/dp/B09GP7P1XS/?tag=1097fa-20",     # B550 High-End
-            "Enthusiast": "https://www.amazon.com/dp/B09GP7P1XS/?tag=1097fa-20"   # X570S
+            "Tier 1": "https://www.amazon.com/dp/B0BXFBN121/?tag=1097fa-20 #A520M-DDR4",
+            "Tier 2": "https://www.amazon.com/dp/B089D1YG11/?tag=1097fa-20 #B550M-WiFi",
+            "Tier 3": "https://www.amazon.com/dp/B0DXWWWTH8/?tag=1097fa-20 #B550-Premium"
         },
         "Motherboard (AMD DDR5)": {
-            "Budget": "https://www.amazon.com/dp/B0CV9BTY7B/?tag=1097fa-20",      # A620M DDR5
-            "Standard": "https://www.amazon.com/dp/B0BH7GTY9C/?tag=1097fa-20",    # B650 ATX DDR5
-            "Premium": "https://www.amazon.com/dp/B0BHMTYZKZ/?tag=1097fa-20",     # B650E DDR5
-            "Enthusiast": "https://www.amazon.com/dp/B0CRF81BBC/?tag=1097fa-20"   # X670E DDR5
+            "Tier 1": "https://www.amazon.com/dp/B0C3ZPLNTH/?tag=1097fa-20 #A620M-DDR5",
+            "Tier 2": "https://www.amazon.com/dp/B0BHN7GGBQ/?tag=1097fa-20 #B650-Premium",
+            "Tier 3": "https://www.amazon.com/dp/B0BDTHQTJV/?tag=1097fa-20 #X670E-ATX"
         }
     },
     "Graphics Card (GPU)": {
         "Dedicated GPU": {
-            "Budget": "https://www.amazon.com/dp/B0F8PR9L3X/?tag=1097fa-20",     
-            "Standard": "https://www.amazon.com/dp/B0CVCKX2GD/?tag=1097fa-20",   
-            "Premium": "https://www.amazon.com/dp/B0BNLSDRKB/?tag=1097fa-20",    
-            "Enthusiast": "https://www.amazon.com/dp/B0DS2R6948/?tag=1097fa-20"  
+            "Tier 1": "https://www.amazon.com/dp/B0F8PR9L3X/?tag=1097fa-20 #RTX-5060",     
+            "Tier 2": "https://www.amazon.com/dp/B0CVCKX2GD/?tag=1097fa-20 #RTX-4070",   
+            "Tier 3": "https://www.amazon.com/dp/B0BNLSDRKB/?tag=1097fa-20 #RX-7900-XT",    
+            "Tier 4": "https://www.amazon.com/dp/B0DS2R6948/?tag=1097fa-20 #RTX-5080",
+            "Tier 5": "https://www.amazon.com/dp/B0BJFRT43X/?tag=1097fa-20 #RTX-4090",
+            "Tier 6": "https://www.amazon.com/dp/B0DS2WQZ2M/?tag=1097fa-20 #RTX-5090"
         }
     },
     "Memory (RAM)": {
         "System Memory (DDR4)": {
-            "Budget": "https://www.amazon.com/dp/B08PJNVWNZ/?tag=1097fa-20",     # 16GB 3200MHz
-            "Standard": "https://www.amazon.com/dp/B08NVLYJK2/?tag=1097fa-20",   # 32GB 3200MHz
-            "Premium": "https://www.amazon.com/dp/B08MF4M9VN/?tag=1097fa-20",    # 32GB 3600MHz CL16
-            "Enthusiast": "https://www.amazon.com/dp/B087T7DWSN/?tag=1097fa-20"  # 64GB 3600MHz
+            "Tier 1": "https://www.amazon.com/dp/B07DMNZY56/?tag=1097fa-20 #32GB-3200MHz",
+            "Tier 2": "https://www.amazon.com/dp/B08176KLZT/?tag=1097fa-20 #32GB-3600MHz",
+            "Tier 3": "https://www.amazon.com/dp/B087T2B287/?tag=1097fa-20 #64GB-3200MHz",
+            "Tier 4": "https://www.amazon.com/dp/B087T7DWSN/?tag=1097fa-20 #64GB-3600MHz"
         },
         "System Memory (DDR5)": {
-            "Budget": "https://www.amazon.com/dp/B0D9PRVBRZ/?tag=1097fa-20",     # 16GB 4800MHz
-            "Standard": "https://www.amazon.com/dp/B0BZHTVHN5/?tag=1097fa-20",   # 32GB 5600MHz
-            "Premium": "https://www.amazon.com/dp/B0BZHTVHN5/?tag=1097fa-20",    # 32GB 6000MHz CL30
-            "Enthusiast": "https://www.amazon.com/dp/B0BJNTLJ5X/?tag=1097fa-20"  # 64GB 6000MHz+ RGB
+            "Tier 1": "https://www.amazon.com/dp/B0F2B26SMC/?tag=1097fa-20 #32GB-5600MHz",
+            "Tier 2": "https://www.amazon.com/dp/B0DLBDBJDF/?tag=1097fa-20 #32GB-6000MHz",
+            "Tier 3": "https://www.amazon.com/dp/B0C5M9P5GK/?tag=1097fa-20 #64GB-6000MHz",
+            "Tier 4": "https://www.amazon.com/dp/B0DT4L3CPH/?tag=1097fa-20 #64GB-6400MHz-RGB"
         }
     },
     "Storage (SSD/HDD)": {
         "Primary NVMe SSD": {
-            "Budget": "https://www.amazon.com/dp/B0CN3N3591/?tag=1097fa-20",     
-            "Standard": "https://www.amazon.com/dp/B0DN7CYYSD/?tag=1097fa-20",   
-            "Premium": "https://www.amazon.com/dp/B0CN3MNWM4/?tag=1097fa-20",    
-            "Enthusiast": "https://www.amazon.com/dp/B0F9XP15XL/?tag=1097fa-20"  
+            "Tier 1": "https://www.amazon.com/dp/B0BHJF2VRN/?tag=1097fa-20 #1TB-Gen4-NVMe",
+            "Tier 2": "https://www.amazon.com/dp/B0BHJJ9Y77/?tag=1097fa-20 #2TB-Gen4-NVMe",
+            "Tier 3": "https://www.amazon.com/dp/B0CHGT1KFJ/?tag=1097fa-20 #4TB-Gen4-NVMe"
         }
     },
     "Power Supply (PSU)": {
         "Power Supply": {
-            "Budget": "https://www.amazon.com/dp/B0991TZ399/?tag=1097fa-20",     
-            "Standard": "https://www.amazon.com/dp/B0CC3QBGDL/?tag=1097fa-20",   
-            "Premium": "https://www.amazon.com/dp/B0CB9MSJ5N/?tag=1097fa-20",    
-            "Enthusiast": "https://www.amazon.com/dp/B0CT3XNCZ9/?tag=1097fa-20"  
+            "Tier 1": "https://www.amazon.com/dp/B0991TZ399/?tag=1097fa-20 #650W-Bronze",
+            "Tier 2": "https://www.amazon.com/dp/B0CB9MSJ5N/?tag=1097fa-20 #850W-Gold-ATX3",
+            "Tier 3": "https://www.amazon.com/dp/B0CT3XNCZ9/?tag=1097fa-20 #1000W-Gold-ATX3"
         }
     },
     "Cooling": {
         "CPU Cooler": {
-            "Budget": "https://www.amazon.com/dp/B0D4X3TCNC/?tag=1097fa-20",     
-            "Standard": "https://www.amazon.com/dp/B09LGY38L4/?tag=1097fa-20",   
-            "Premium": "https://www.amazon.com/dp/B0CCNS5NZ9/?tag=1097fa-20",    
-            "Enthusiast": "https://www.amazon.com/dp/B0D6BFBLTK/?tag=1097fa-20"  
+            "Tier 1": "https://www.amazon.com/dp/B0CCNS5NZ9/?tag=1097fa-20 #240mm-AIO",
+            "Tier 2": "https://www.amazon.com/dp/B0DLWFCVSD/?tag=1097fa-20 #360mm-AIO",
+            "Tier 3": "https://www.amazon.com/dp/B0D6BFBLTK/?tag=1097fa-20 #360mm-LCD-AIO"
         }
     },
     "Case": {
         "ATX Mid-Tower Case": {
-            "Budget": "https://www.amazon.com/dp/B0D5PHHCK5/?tag=1097fa-20",
-            "Standard": "https://www.amazon.com/dp/B0DFHNV7TK/?tag=1097fa-20",
-            "Premium": "https://www.amazon.com/dp/B0CRKVN35N/?tag=1097fa-20",
-            "Enthusiast": "https://www.amazon.com/dp/B0FGPRBFWJ/?tag=1097fa-20"
+            "Tier 1": "https://www.amazon.com/dp/B0F2T66QC9/?tag=1097fa-20 #Budget-ATX-Mesh",
+            "Tier 2": "https://www.amazon.com/dp/B0DFHNV7TK/?tag=1097fa-20 #High-Value-Airflow",
+            "Tier 3": "https://www.amazon.com/dp/B0DJPY63XL/?tag=1097fa-20 #Standard-Airflow",
+            "Tier 4": "https://www.amazon.com/dp/B0FGPRBFWJ/?tag=1097fa-20 #Premium-Airflow",
+            "Tier 5": "https://www.amazon.com/dp/B0DWF95QP7/?tag=1097fa-20 #Dual-Chamber",
+            "Tier 6": "https://www.amazon.com/dp/B0DDNS2SY3/?tag=1097fa-20 #Designer-Showcase"
         }
     },
     "Monitor": {
         "Gaming Monitor": {
-            "Budget": "https://www.amazon.com/dp/B0C8ZKV5R9/?tag=1097fa-20",
-            "Standard": "https://www.amazon.com/dp/B0D9MK23S7/?tag=1097fa-20",
-            "Premium": "https://www.amazon.com/dp/B0D6CKL4HV/?tag=1097fa-20",
-            "Enthusiast": "https://www.amazon.com/dp/B0DB9Q5G3R/?tag=1097fa-20"
+            "Tier 1": "https://www.amazon.com/dp/B0C8ZKV5R9/?tag=1097fa-20 #1080p-144Hz",
+            "Tier 2": "https://www.amazon.com/dp/B0D9MK23S7/?tag=1097fa-20 #1440p-144Hz",
+            "Tier 3": "https://www.amazon.com/dp/B0F1GF1KFC/?tag=1097fa-20 #1440p-240Hz",
+            "Tier 4": "https://www.amazon.com/dp/B0DHG1GTG2/?tag=1097fa-20 #4K-144Hz",
+            "Tier 5": "https://www.amazon.com/dp/B0CV236YSW/?tag=1097fa-20 #4K-160Hz",
+            "Tier 6": "https://www.amazon.com/dp/B0FNQDNGXY/?tag=1097fa-20 #4K-OLED"
         }
     }
 }
@@ -246,16 +249,28 @@ for category, items in input_catalog.items():
             }
             
             if category == "Graphics Card (GPU)" and item_name == "Dedicated GPU":
-                if tier_name == "Budget": tier_data["benchmark"] = "1080p High | 60+ FPS"
-                elif tier_name == "Standard": tier_data["benchmark"] = "1440p Ultra | 100+ FPS"
-                elif tier_name == "Premium": tier_data["benchmark"] = "4K High | 90+ FPS"
-                elif tier_name.lower() == "enthusiast": tier_data["benchmark"] = "4K Max | 120+ FPS"
+                if tier_name == "Tier 1": tier_data["benchmark"] = "1080p High | 60+ FPS"
+                elif tier_name == "Tier 2": tier_data["benchmark"] = "1440p High | 60+ FPS"
+                elif tier_name == "Tier 3": tier_data["benchmark"] = "1440p Ultra | 100+ FPS"
+                elif tier_name == "Tier 4": tier_data["benchmark"] = "4K High | 60+ FPS"
+                elif tier_name == "Tier 5": tier_data["benchmark"] = "4K Ultra | 100+ FPS"
+                elif tier_name == "Tier 6": tier_data["benchmark"] = "4K Max | 144+ FPS"
                 
-            if category == "CPU & Motherboard" and item_name == "Processor (CPU)":
-                if tier_name == "Budget": tier_data["benchmark"] = "Great Entry Level Gaming"
-                elif tier_name == "Standard": tier_data["benchmark"] = "Excellent Price/Performance"
-                elif tier_name == "Premium": tier_data["benchmark"] = "Top-Tier Gaming Performance"
-                elif tier_name.lower() == "enthusiast": tier_data["benchmark"] = "Extreme Multitasking & Productivity"
+            if category == "CPU & Motherboard" and "Processor" in item_name:
+                if tier_name == "Tier 1": tier_data["benchmark"] = "Great Entry Level Gaming"
+                elif tier_name == "Tier 2": tier_data["benchmark"] = "Solid 1080p Performance"
+                elif tier_name == "Tier 3": tier_data["benchmark"] = "Excellent Price/Performance"
+                elif tier_name == "Tier 4": tier_data["benchmark"] = "High-End Gaming & Streaming"
+                elif tier_name == "Tier 5": tier_data["benchmark"] = "Top-Tier Gaming Performance"
+                elif tier_name == "Tier 6": tier_data["benchmark"] = "Extreme Multitasking & Productivity"
+                
+            if category == "Monitor":
+                if tier_name == "Tier 1": tier_data["benchmark"] = "1080p | 100Hz+"
+                elif tier_name == "Tier 2": tier_data["benchmark"] = "1080p | 144Hz+ High Refresh"
+                elif tier_name == "Tier 3": tier_data["benchmark"] = "1440p | 144Hz+ Sweet Spot"
+                elif tier_name == "Tier 4": tier_data["benchmark"] = "1440p | 240Hz+ Competitive"
+                elif tier_name == "Tier 5": tier_data["benchmark"] = "4K | 144Hz+ Ultra HD"
+                elif tier_name == "Tier 6": tier_data["benchmark"] = "4K OLED | Flawless Motion"
 
             item_block["tiers"].append(tier_data)
             
