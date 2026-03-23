@@ -10,57 +10,87 @@ AFFILIATE_TAG = "1097fa-20"
 
 input_catalog = {
     "CPU & Motherboard": {
-        "Processor (CPU)": {
-            "Budget": "https://www.amazon.com/dp/B09FXNVDBJ/?tag=1097fa-20",     # 279 i3-12100F
-            "Standard": "https://www.amazon.com/dp/B0BBJDS62N/?tag=1097fa-20",   # e.g., Ryzen 5 7600
-            "Premium": "https://www.amazon.com/dp/B0BTZB7F88/?tag=1097fa-20",    # e.g., Ryzen 7 7800X3D
-            "Enthusiast": "https://www.amazon.com/dp/B0CGJDKLB8/?tag=1097fa-20"  # e.g., i9-14900K
+        "Processor (Intel)": {
+            "Budget": "https://www.amazon.com/dp/B09FXNVDBJ/?tag=1097fa-20",      # i3-12100F
+            "Standard": "https://www.amazon.com/dp/B0BQ6B9511/?tag=1097fa-20",    # i5-13400F
+            "Premium": "https://www.amazon.com/dp/B0CGJ41C9W/?tag=1097fa-20",     # i7-14700K
+            "Enthusiast": "https://www.amazon.com/dp/B0CGJDKLB8/?tag=1097fa-20"   # i9-14900K
         },
-        "Motherboard": {
-            "Budget": "https://www.amazon.com/dp/B0BZ9T4KF6/?tag=1097fa-20",
-            "Standard": "https://www.amazon.com/dp/B0BH7GTY9C/?tag=1097fa-20",
-            "Premium": "https://www.amazon.com/dp/B0BDCZRBD6/?tag=1097fa-20",
-            "Enthusiast": "https://www.amazon.com/dp/B0CHHXR5XV/?tag=1097fa-20"
+        "Processor (AMD)": {
+            "Budget": "https://www.amazon.com/dp/B09VCHR1VH/?tag=1097fa-20",      # Ryzen 5 5600
+            "Standard": "https://www.amazon.com/dp/B0BBJDS62N/?tag=1097fa-20",    # Ryzen 5 7600
+            "Premium": "https://www.amazon.com/dp/B0BTZB7F88/?tag=1097fa-20",     # Ryzen 7 7800X3D
+            "Enthusiast": "https://www.amazon.com/dp/B0BTRH9MNS/?tag=1097fa-20"   # Ryzen 9 7950X3D
+        },
+        "Motherboard (Intel DDR4)": {
+            "Budget": "https://www.amazon.com/dp/B09PXD2QDC/?tag=1097fa-20",      # H610/B660M
+            "Standard": "https://www.amazon.com/dp/B0BZ9T4KF6/?tag=1097fa-20",    # B760 DDR4
+            "Premium": "https://www.amazon.com/dp/B09J1RMBQD/?tag=1097fa-20",     # Z690 DDR4
+            "Enthusiast": "https://www.amazon.com/dp/B0BQD58D96/?tag=1097fa-20"   # Z790 DDR4
+        },
+        "Motherboard (Intel DDR5)": {
+            "Budget": "https://www.amazon.com/dp/B0C15THTK7/?tag=1097fa-20",      # B760M DDR5
+            "Standard": "https://www.amazon.com/dp/B0C1PKQJSM/?tag=1097fa-20",    # B760 ATX DDR5
+            "Premium": "https://www.amazon.com/dp/B0BHT8TNZV/?tag=1097fa-20",     # Z790 DDR5
+            "Enthusiast": "https://www.amazon.com/dp/B0BHHYNCWX/?tag=1097fa-20"   # Z790 High-End DDR5
+        },
+        "Motherboard (AMD DDR4)": {
+            "Budget": "https://www.amazon.com/dp/B089W2ZTHF/?tag=1097fa-20",      # B450M / A520M
+            "Standard": "https://www.amazon.com/dp/B08F7BHDLY/?tag=1097fa-20",    # B550 ATX
+            "Premium": "https://www.amazon.com/dp/B089CQFHHZ/?tag=1097fa-20",     # B550 High-End
+            "Enthusiast": "https://www.amazon.com/dp/B08BWZGSHV/?tag=1097fa-20"   # X570S
+        },
+        "Motherboard (AMD DDR5)": {
+            "Budget": "https://www.amazon.com/dp/B0C1ZZZG8F/?tag=1097fa-20",      # A620M DDR5
+            "Standard": "https://www.amazon.com/dp/B0BH7GTY9C/?tag=1097fa-20",    # B650 ATX DDR5
+            "Premium": "https://www.amazon.com/dp/B0BDCZRBD6/?tag=1097fa-20",     # B650E DDR5
+            "Enthusiast": "https://www.amazon.com/dp/B0CHHXR5XV/?tag=1097fa-20"   # X670E DDR5
         }
     },
     "Graphics Card (GPU)": {
         "Dedicated GPU": {
-            "Budget": "https://www.amazon.com/dp/B0C8ZLMHG9/?tag=1097fa-20",     # e.g., RTX 4060
-            "Standard": "https://www.amazon.com/dp/B0CQTNRTZR/?tag=1097fa-20",   # e.g., RTX 4070 SUPER
-            "Premium": "https://www.amazon.com/dp/B0BWSHT3XW/?tag=1097fa-20",    # e.g., RX 7900 XTX
-            "Enthusiast": "https://www.amazon.com/dp/B0BQTSV2GG/?tag=1097fa-20"  # e.g., RTX 4090
+            "Budget": "https://www.amazon.com/dp/B0C8ZLMHG9/?tag=1097fa-20",     
+            "Standard": "https://www.amazon.com/dp/B0CQTNRTZR/?tag=1097fa-20",   
+            "Premium": "https://www.amazon.com/dp/B0BWSHT3XW/?tag=1097fa-20",    
+            "Enthusiast": "https://www.amazon.com/dp/B0BQTSV2GG/?tag=1097fa-20"  
         }
     },
     "Memory (RAM)": {
-        "System Memory": {
-            "Budget": "https://www.amazon.com/dp/B0143UM4TC/?tag=1097fa-20",     # 16GB DDR4
-            "Standard": "https://www.amazon.com/dp/B0BF8FVLSL/?tag=1097fa-20",   # 32GB DDR5 5600MHz
-            "Premium": "https://www.amazon.com/dp/B0BPTKD797/?tag=1097fa-20",    # 32GB DDR5 6000MHz CL30
-            "Enthusiast": "https://www.amazon.com/dp/B0C79HZN1L/?tag=1097fa-20"  # 64GB DDR5 RGB
+        "System Memory (DDR4)": {
+            "Budget": "https://www.amazon.com/dp/B0143UM4TC/?tag=1097fa-20",     # 16GB 3200MHz
+            "Standard": "https://www.amazon.com/dp/B08SQC325S/?tag=1097fa-20",   # 32GB 3200MHz
+            "Premium": "https://www.amazon.com/dp/B082DJ19CK/?tag=1097fa-20",    # 32GB 3600MHz CL16
+            "Enthusiast": "https://www.amazon.com/dp/B07Z45XB3G/?tag=1097fa-20"  # 64GB 3600MHz
+        },
+        "System Memory (DDR5)": {
+            "Budget": "https://www.amazon.com/dp/B09NCNF2ZQ/?tag=1097fa-20",     # 16GB 4800MHz
+            "Standard": "https://www.amazon.com/dp/B0BF8FVLSL/?tag=1097fa-20",   # 32GB 5600MHz
+            "Premium": "https://www.amazon.com/dp/B0BPTKD797/?tag=1097fa-20",    # 32GB 6000MHz CL30
+            "Enthusiast": "https://www.amazon.com/dp/B0C79HZN1L/?tag=1097fa-20"  # 64GB 6000MHz+ RGB
         }
     },
     "Storage (SSD/HDD)": {
         "Primary NVMe SSD": {
-            "Budget": "https://www.amazon.com/dp/B0B25LQQPC/?tag=1097fa-20",     # 1TB Gen3
-            "Standard": "https://www.amazon.com/dp/B0CRCC9863/?tag=1097fa-20",   # 1TB Gen4 Fast
-            "Premium": "https://www.amazon.com/dp/B0CHGT1VDJ/?tag=1097fa-20",    # 2TB Gen4 High-End
-            "Enthusiast": "https://www.amazon.com/dp/B0CP97WTMY/?tag=1097fa-20"  # 4TB Gen4
+            "Budget": "https://www.amazon.com/dp/B0B25LQQPC/?tag=1097fa-20",     
+            "Standard": "https://www.amazon.com/dp/B0CRCC9863/?tag=1097fa-20",   
+            "Premium": "https://www.amazon.com/dp/B0CHGT1VDJ/?tag=1097fa-20",    
+            "Enthusiast": "https://www.amazon.com/dp/B0CP97WTMY/?tag=1097fa-20"  
         }
     },
     "Power Supply (PSU)": {
         "Power Supply": {
-            "Budget": "https://www.amazon.com/dp/B08ZD8TXXY/?tag=1097fa-20",     # 650W Bronze
-            "Standard": "https://www.amazon.com/dp/B0C22YJ6L8/?tag=1097fa-20",   # 750W Gold ATX 3.0
-            "Premium": "https://www.amazon.com/dp/B0BTLU2B24/?tag=1097fa-20",    # 850W Gold ATX 3.0
-            "Enthusiast": "https://www.amazon.com/dp/B0C7J21Z6R/?tag=1097fa-20"  # 1000W+ Platinum
+            "Budget": "https://www.amazon.com/dp/B08ZD8TXXY/?tag=1097fa-20",     
+            "Standard": "https://www.amazon.com/dp/B0C22YJ6L8/?tag=1097fa-20",   
+            "Premium": "https://www.amazon.com/dp/B0BTLU2B24/?tag=1097fa-20",    
+            "Enthusiast": "https://www.amazon.com/dp/B0C7J21Z6R/?tag=1097fa-20"  
         }
     },
     "Cooling": {
         "CPU Cooler": {
-            "Budget": "https://www.amazon.com/dp/B09SDG4DFF/?tag=1097fa-20",     # Basic Air Cooler
-            "Standard": "https://www.amazon.com/dp/B09LGY38L4/?tag=1097fa-20",   # Dual Tower Air Cooler
-            "Premium": "https://www.amazon.com/dp/B0BWJ5K5R5/?tag=1097fa-20",    # 240mm AIO Liquid Cooler
-            "Enthusiast": "https://www.amazon.com/dp/B0B7X74W4F/?tag=1097fa-20"  # 360mm Premium AIO LCD
+            "Budget": "https://www.amazon.com/dp/B09SDG4DFF/?tag=1097fa-20",     
+            "Standard": "https://www.amazon.com/dp/B09LGY38L4/?tag=1097fa-20",   
+            "Premium": "https://www.amazon.com/dp/B0BWJ5K5R5/?tag=1097fa-20",    
+            "Enthusiast": "https://www.amazon.com/dp/B0B7X74W4F/?tag=1097fa-20"  
         }
     },
     "Case": {
