@@ -415,7 +415,7 @@
                 <div class="category-title-label" style="text-align: center; margin-bottom: 5px;">Your Target Budget</div>
                 <div class="budget-display" id="budgetDisplay">$1,500</div>
                 <div class="slider-wrapper" style="margin-top: 10px; margin-bottom: 50px;">
-                    <input type="range" id="budgetSlider" min="500" max="5000" step="50" value="1500">
+                    <input type="range" id="budgetSlider" min="500" max="7500" step="50" value="1500">
                 </div>
 
                 <div class="category-selector" style="margin-bottom: 35px;">
@@ -731,7 +731,7 @@
                          onload="if(this.naturalWidth <= 1 && !this.src.includes('dummyimage')) this.src='https://dummyimage.com/400x300/1e293b/f8fafc.png&text=Image+Unavailable';"
                          onerror="this.onerror=null;this.src='https://dummyimage.com/400x300/1e293b/f8fafc.png&text=Image+Unavailable';">
                     <div>
-                        <span class="tier-badge">${tier.tier} Choice</span>
+                        <span class="tier-badge">${tier.tier.toUpperCase()}</span>
                     </div>
                     <div class="product-name">${tier.title}</div>
                     ${starsHTML}
@@ -892,7 +892,7 @@
                 buildBtn.disabled = false;
 
                 const newMin = Math.max(100, Math.floor(minFloor / 50) * 50);
-                const newMax = 7500;
+                const newMax = 7500; 
 
                 budgetSlider.min = newMin;
                 budgetSlider.max = newMax;
