@@ -276,7 +276,7 @@
                 {
                     "tier": "Tier 2",
                     "title": "ASUS Dual GeForce RTX\u2122 4070 Super EVO OC Edition 12GB GDDR6X (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1a, DisplayPort 1.4a, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)",
-                    "price": 599.99,
+                    "price": 589.99,
                     "rating": 4.7,
                     "reviews": 2058,
                     "link": "https://www.amazon.com/dp/B0CVCKX2GD/?tag=1097fa-20 #RTX-4070",
@@ -546,7 +546,7 @@
                 {
                     "tier": "Tier 4",
                     "title": "Fractal Design North Momentum Black - Glass Side Panel - Genuine Blackened Oak Wood Front - High Airflow PC Gaming Case - Three Powerful 120mm Momentum Fans Included - ATX Support",
-                    "price": 215.01,
+                    "price": 212.28,
                     "rating": 4.7,
                     "reviews": 2306,
                     "link": "https://www.amazon.com/dp/B0FGPRBFWJ/?tag=1097fa-20 #Premium-Airflow",
@@ -630,7 +630,7 @@
                 {
                     "tier": "Tier 6",
                     "title": "Samsung 27\u201d Odyssey OLED G5 (G50SF) QHD & QD-OLED Gaming Monitor, 180Hz Refresh Rate, 0.03ms (GtG) Response Time, NVIDIA G-Sync Compatible, AMD FreeSync\u2122, LS27FG500SNXZA",
-                    "price": 429.99,
+                    "price": 349.99,
                     "rating": 4.4,
                     "reviews": 242,
                     "link": "https://www.amazon.com/dp/B0FNQDNGXY/?tag=1097fa-20 #4K-OLED",
@@ -641,6 +641,6 @@
         }
     ],
     "_metadata": {
-        "last_updated": "March 23, 2026 at 06:04 PM"
+        "last_updated": "March 23, 2026 at 06:23 PM"
     }
 }
