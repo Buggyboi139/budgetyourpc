@@ -575,15 +575,15 @@
                     desc: "Focuses purely on getting the system running with essential components. GPU power is secondary to basic functionality."
                 },
                 office: {
-                    weights: { "CPU & Motherboard": 0.40, "Graphics Card (GPU)": 0.05, "Memory (RAM)": 0.15, "Storage (SSD/HDD)": 0.15, "Power Supply (PSU)": 0.05, "Cooling": 0.05, "Case": 0.05, "Monitor": 0.10 },
-                    desc: "Prioritizes processing power, fast storage, and plenty of memory for heavy multitasking and productivity, rather than graphics."
+                    weights: { "CPU & Motherboard": 0.45, "Graphics Card (GPU)": 0.00, "Memory (RAM)": 0.15, "Storage (SSD/HDD)": 0.15, "Power Supply (PSU)": 0.05, "Cooling": 0.05, "Case": 0.05, "Monitor": 0.10 },
+                    desc: "Prioritizes processing power, fast storage, and plenty of memory for heavy multitasking and productivity. Excludes dedicated graphics."
                 },
                 gaming: {
                     weights: { "CPU & Motherboard": 0.20, "Graphics Card (GPU)": 0.45, "Memory (RAM)": 0.08, "Storage (SSD/HDD)": 0.07, "Power Supply (PSU)": 0.05, "Cooling": 0.05, "Case": 0.05, "Monitor": 0.05 },
                     desc: "A classic gaming allocation. Dumps the bulk of the budget into the GPU and a competent processor to avoid bottlenecks."
                 },
                 "high-end": {
-                    weights: { "CPU & Motherboard": 0.25, "Graphics Card (GPU)": 0.35, "Memory (RAM)": 0.08, "Storage (SSD/HDD)": 0.08, "Power Supply (PSU)": 0.08, "Cooling": 0.06, "Case": 0.05, "Monitor": 0.05 },
+                    weights: { "CPU & Motherboard": 0.20, "Graphics Card (GPU)": 0.40, "Memory (RAM)": 0.08, "Storage (SSD/HDD)": 0.08, "Power Supply (PSU)": 0.08, "Cooling": 0.06, "Case": 0.05, "Monitor": 0.05 },
                     desc: "A well-rounded enthusiast build. Spread evenly to allow for premium cases, high-end power delivery, and excellent cooling alongside top-tier silicon."
                 },
                 ai: {
@@ -849,34 +849,58 @@
                 }
             }
 
+            function filterValidItems(items, catName, currentCpu, currentRam, profileId) {
+                return items.map(item => {
+                    if (catName === "CPU & Motherboard") {
+                        if (item.name.includes("Processor") && !item.name.includes(currentCpu)) return null;
+                        if (item.name.includes("Motherboard")) {
+                            if (!item.name.includes(currentCpu)) return null;
+                            if (!item.name.includes(currentRam)) return null;
+                        }
+                    }
+                    if (catName === "Memory (RAM)" && !item.name.includes(currentRam)) return null;
+                    
+                    let validTiers = item.tiers.filter(tier => {
+                        const titleLower = tier.title.toLowerCase();
+                        
+                        if (currentCpu === "AMD" && item.name.includes("Processor")) {
+                            const isAM4 = titleLower.includes("5600") || titleLower.includes("5000") || titleLower.includes("am4");
+                            const isAM5 = titleLower.includes("7600") || titleLower.includes("9800") || titleLower.includes("7950") || titleLower.includes("9950") || titleLower.includes("am5") || titleLower.includes("7000");
+                            if (currentRam === "DDR4" && isAM5) return false;
+                            if (currentRam === "DDR5" && isAM4) return false;
+                        }
+                        
+                        if (profileId === "ai") {
+                            if (item.name.includes("Processor") && titleLower.includes("x3d")) return false;
+                            if (catName === "Graphics Card (GPU)" && (titleLower.includes("radeon") || titleLower.includes("rx "))) return false;
+                        }
+                        
+                        return true;
+                    });
+                    
+                    if (validTiers.length === 0) return null;
+                    return { ...item, tiers: validTiers };
+                }).filter(item => item !== null);
+            }
+
             function updateSliderBounds() {
                 let minFloor = 0;
                 let activeCount = 0;
 
                 const cpuPlatform = document.querySelector('input[name="cpu_platform"]:checked');
                 const ramGen = document.querySelector('input[name="ram_gen"]:checked');
+                const profileRadio = document.querySelector('input[name="priority_profile"]:checked');
 
                 const currentCpu = cpuPlatform ? cpuPlatform.value : "AMD";
                 const currentRam = ramGen ? ramGen.value : "DDR5";
+                const currentProfile = profileRadio ? profileRadio.value : "gaming";
 
                 document.querySelectorAll('.category-toggle:checked').forEach(cb => {
                     if (Object.keys(categoryColors).includes(cb.value)) {
                         activeCount++;
                         let items = productDatabase[cb.value] || [];
 
-                        items = items.filter(item => {
-                            if (cb.value === "CPU & Motherboard") {
-                                if (item.name.includes("Processor") && !item.name.includes(currentCpu)) return false;
-                                if (item.name.includes("Motherboard")) {
-                                    if (!item.name.includes(currentCpu)) return false;
-                                    if (!item.name.includes(currentRam)) return false;
-                                }
-                            }
-                            if (cb.value === "Memory (RAM)") {
-                                if (!item.name.includes(currentRam)) return false;
-                            }
-                            return true;
-                        });
+                        items = filterValidItems(items, cb.value, currentCpu, currentRam, currentProfile);
 
                         items.forEach(item => {
                             if (item.tiers && item.tiers.length > 0) {
@@ -958,7 +982,10 @@
                 let itemsList = [];
                 const profileWeights = profiles[selectedProfileId].weights;
                 
-                const trueCategories = activeCategoryNames;
+                let trueCategories = activeCategoryNames;
+                if (selectedProfileId === "office") {
+                    trueCategories = trueCategories.filter(c => c !== "Graphics Card (GPU)");
+                }
                 
                 let totalWeight = 0;
                 trueCategories.forEach(cat => totalWeight += (profileWeights[cat] || 0));
@@ -971,22 +998,16 @@
                     const cpuPlatform = document.querySelector('input[name="cpu_platform"]:checked').value;
                     const ramGen = document.querySelector('input[name="ram_gen"]:checked').value;
                     
-                    items = items.filter(item => {
-                        if (cat === "CPU & Motherboard") {
-                            if (item.name.includes("Processor") && !item.name.includes(cpuPlatform)) return false;
-                            if (item.name.includes("Motherboard")) {
-                                if (!item.name.includes(cpuPlatform)) return false;
-                                if (!item.name.includes(ramGen)) return false;
-                            }
-                        }
-                        if (cat === "Memory (RAM)") {
-                            if (!item.name.includes(ramGen)) return false;
-                        }
-                        return true;
-                    });
+                    items = filterValidItems(items, cat, cpuPlatform, ramGen, selectedProfileId);
 
                     items.forEach(item => {
-                        itemsList.push({ catName: cat, baseItem: { ...item, tiers: item.tiers }, currentTierIdx: 0 });
+                        let startingTier = 0;
+                        if (cat === "Power Supply (PSU)") {
+                            if (totalBudget > 2200) startingTier = Math.min(2, item.tiers.length - 1);
+                            else if (totalBudget > 1400) startingTier = Math.min(1, item.tiers.length - 1);
+                        }
+                        
+                        itemsList.push({ catName: cat, baseItem: { ...item, tiers: item.tiers }, currentTierIdx: startingTier });
                     });
                 });
 
