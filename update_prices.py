@@ -11,8 +11,8 @@ AFFILIATE_TAG = "1097fa-20"
 input_catalog = {
     "CPU & Motherboard": {
         "Processor (Intel)": {
-            "Tier 1": "https://www.amazon.com/dp/B09NPJX7PV/?tag=1097fa-20 #i3-12100F",
-            "Tier 2": "https://www.amazon.com/dp/B0BQ6BRL4T/?tag=1097fa-20 #i5-13400F",
+            "Tier 1": "https://www.amazon.com/dp/B09NPJX7PV/?tag=1097fa-20 #i3-12100",
+            "Tier 2": "https://www.amazon.com/dp/B0BQ68QB6R/?tag=1097fa-20 #i5-13400",
             "Tier 3": "https://www.amazon.com/dp/B0BCDR9M33/?tag=1097fa-20 #i5-13600K",
             "Tier 4": "https://www.amazon.com/dp/B0CGJC178L/?tag=1097fa-20 #i7-14700K",
             "Tier 5": "https://www.amazon.com/dp/B09RWL74GY/?tag=1097fa-20 #i9-14900K",
@@ -236,7 +236,10 @@ for category, items in input_catalog.items():
                     rating = old_data[link].get("rating", rating)
                     reviews = old_data[link].get("reviews", reviews)
                 else:
-                    print(f"    [!] Scrape failed and no valid backup found for {tier_name}.")
+                    print(f"    [!] Scrape failed and no valid backup found. Applying emergency fallback.")
+                    if "5600MHz" in link or "6000MHz" in link and "32GB" in link: price = 110.00
+                    elif "64GB" in link: price = 210.00
+                    elif "96GB" in link or "6400MHz" in link: price = 330.00
 
             tier_data = {
                 "tier": tier_name,
