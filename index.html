@@ -945,7 +945,14 @@
 
             startOverBtn.addEventListener('click', goToSetup);
             logoBtn.addEventListener('click', goToSetup);
-            exportPdfBtn.addEventListener('click', () => { window.print(); });
+            exportPdfBtn.addEventListener('click', () => { 
+                gtag('event', 'pdf_export_click', {
+                    'event_category': 'engagement',
+                    'event_label': 'Save as PDF'
+                });
+                
+                window.print(); 
+            });
 
             function calculateOptimalKit(totalBudget, activeCategoryNames, selectedProfileId) {
                 let itemsList = [];
@@ -1065,7 +1072,15 @@
 
             buildBtn.addEventListener('click', () => {
                 if(buildBtn.disabled) return;
-
+            
+                gtag('event', 'generate_kit_click', {
+                    'event_category': 'engagement',
+                    'target_budget': parseInt(budgetSlider.value),
+                    'priority_profile': document.querySelector('input[name="priority_profile"]:checked').value,
+                    'cpu_platform': document.querySelector('input[name="cpu_platform"]:checked').value,
+                    'ram_gen': document.querySelector('input[name="ram_gen"]:checked').value
+                });
+            
                 const totalBudget = parseInt(budgetSlider.value);
                 
                 const fudgeFactor = Math.floor(Math.random() * 41) + 80;
@@ -1095,9 +1110,17 @@
             
             let modalHasBeenShown = false;
             document.getElementById('categories-container').addEventListener('click', function(e) {
-                if (e.target.classList.contains('buy-btn') && !modalHasBeenShown) {
-                    document.getElementById('email-modal').classList.add('show-modal');
-                    modalHasBeenShown = true;
+                if (e.target.classList.contains('buy-btn')) {
+                    
+                    gtag('event', 'amazon_outbound_click', {
+                        'event_category': 'affiliate_link',
+                        'outbound_url': e.target.href
+                    });
+            
+                    if (!modalHasBeenShown) {
+                        document.getElementById('email-modal').classList.add('show-modal');
+                        modalHasBeenShown = true;
+                    }
                 }
                 
                 const minusBtn = e.target.closest('.qty-minus');
