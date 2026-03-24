@@ -11,7 +11,7 @@ AFFILIATE_TAG = "1097fa-20"
 input_catalog = {
     "CPU & Motherboard": {
         "Processor (Intel)": {
-            "Tier 1": "https://www.amazon.com/dp/B09NPJX7PV/?tag=1097fa-20 #i3-12100",
+            "Tier 1": "https://www.amazon.com/dp/B09NPHJLPT/?tag=1097fa-20 #i3-12100",
             "Tier 2": "https://www.amazon.com/dp/B0BQ68QB6R/?tag=1097fa-20 #i5-13400",
             "Tier 3": "https://www.amazon.com/dp/B0BCDR9M33/?tag=1097fa-20 #i5-13600K",
             "Tier 4": "https://www.amazon.com/dp/B0CGJC178L/?tag=1097fa-20 #i7-14700K",
@@ -65,10 +65,10 @@ input_catalog = {
             "Tier 4": "https://www.amazon.com/dp/B087T7DWSN/?tag=1097fa-20 #64GB-3600MHz"
         },
         "System Memory (DDR5)": {
-            "Tier 1": "https://www.amazon.com/dp/B0F2B26SMC/?tag=1097fa-20 #32GB-5600MHz",
-            "Tier 2": "https://www.amazon.com/dp/B0DLBDBJDF/?tag=1097fa-20 #32GB-6000MHz",
-            "Tier 3": "https://www.amazon.com/dp/B0C5M9P5GK/?tag=1097fa-20 #64GB-6000MHz",
-            "Tier 4": "https://www.amazon.com/dp/B0DT4L3CPH/?tag=1097fa-20 #64GB-6400MHz-RGB"
+            "Tier 1": "https://www.amazon.com/dp/B0BJ37G4PS/?tag=1097fa-20 #32GB-5600MHz",
+            "Tier 2": "https://www.amazon.com/dp/B0BZHTVHN5/?tag=1097fa-20 #32GB-6000MHz",
+            "Tier 3": "https://www.amazon.com/dp/B0C4X758YM/?tag=1097fa-20 #64GB-6000MHz",
+            "Tier 4": "https://www.amazon.com/dp/B0BJ7X9P1W/?tag=1097fa-20 #64GB-6400MHz-RGB"
         }
     },
     "Storage (SSD/HDD)": {
