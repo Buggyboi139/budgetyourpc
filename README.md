@@ -1,7 +1,7 @@
 # BudgetYourPC
 
 ## Overview
-BudgetYourPC is a dynamic web application engineered to aggregate hardware pricing and automatically provision custom PC builds based on strict user-defined financial brackets. It handles complex data filtering and conditional logic to match compatible components within localized budget constraints.
+Live at https://budgetyourpc.com BudgetYourPC is a dynamic web application engineered to aggregate hardware pricing and automatically provision custom PC builds based on strict user-defined financial brackets. It handles complex data filtering and conditional logic to match compatible components within localized budget constraints.
 
 ## Architecture & Data Flow
 The application utilizes a decoupled architecture, isolating the backend data ingestion pipeline from the client-side presentation layer.
